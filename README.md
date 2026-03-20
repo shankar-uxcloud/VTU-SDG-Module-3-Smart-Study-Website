@@ -38,15 +38,8 @@ A smart VTU SDG Module-3 exam preparation platform with a futuristic neon UI, AI
 
 ## 🚀 Live Demo
 
-👉 https://your-username.github.io/your-repository-name/
+👉 https://shankar-uxcloud.github.io/VTU-SDG-Module-3-Smart-Study-Website/
 
-(Replace with your actual link)
-
----
-
-## 📸 Screenshots
-
-(Add your UI screenshots here)
 
 ---
 
