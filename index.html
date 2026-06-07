@@ -1,834 +1,611 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VTU MODULE-3 🔥 CLIMATE CHANGE — FULL MARKS MACHINE</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>VTU SDG Module-3 | Exam Answer Generator</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <style>
-  :root {
-    --emerald: #00ff88;
-    --cyan: #00e5ff;
-    --magenta: #ff00ff;
-    --purple: #bf00ff;
-    --blue: #0066ff;
-    --orange: #ff6600;
-    --pink: #ff0066;
-    --dark: #050a12;
-    --dark2: #080f1a;
-    --dark3: #0d1926;
-    --glass: rgba(0,255,136,0.04);
-    --glass2: rgba(0,229,255,0.06);
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    background: var(--dark);
-    color:#e8f4ff;
-    font-family:'Rajdhani',sans-serif;
-    min-height:100vh;
-    overflow-x:hidden;
-  }
+:root {
+  --bg: #050b14;
+  --surface: rgba(255,255,255,0.04);
+  --surface2: rgba(255,255,255,0.07);
+  --border: rgba(255,255,255,0.08);
+  --cyan: #00f5d4;
+  --emerald: #10b981;
+  --purple: #a855f7;
+  --pink: #f472b6;
+  --gold: #fbbf24;
+  --text: #e2e8f0;
+  --muted: #64748b;
+  --glow-c: rgba(0,245,212,0.15);
+  --glow-p: rgba(168,85,247,0.15);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Space Grotesk',sans-serif;
+  min-height:100vh;
+  overflow-x:hidden;
+}
 
-  /* PARTICLES */
-  #particles{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden;}
-  .particle{
-    position:absolute;
-    border-radius:50%;
-    animation:float linear infinite;
-    opacity:0;
-  }
-  @keyframes float{
-    0%{transform:translateY(100vh) rotate(0deg);opacity:0;}
-    10%{opacity:1;}
-    90%{opacity:0.8;}
-    100%{transform:translateY(-100px) rotate(720deg);opacity:0;}
-  }
+/* Animated background */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 10%, rgba(0,245,212,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 80%, rgba(168,85,247,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 50% 50%, rgba(16,185,129,0.04) 0%, transparent 60%);
+  pointer-events:none;
+  z-index:0;
+}
 
-  /* GRID BACKGROUND */
-  body::before{
-    content:'';
-    position:fixed;
-    top:0;left:0;width:100%;height:100%;
-    background-image:
-      linear-gradient(rgba(0,255,136,0.03) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(0,255,136,0.03) 1px,transparent 1px);
-    background-size:40px 40px;
-    pointer-events:none;
-    z-index:0;
-  }
+/* Layout */
+.app{display:flex;min-height:100vh;position:relative;z-index:1;}
 
-  /* SCANLINE */
-  body::after{
-    content:'';
-    position:fixed;
-    top:0;left:0;width:100%;height:100%;
-    background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.08) 2px,rgba(0,0,0,0.08) 4px);
-    pointer-events:none;
-    z-index:0;
-    animation:scan 8s linear infinite;
-  }
-  @keyframes scan{
-    0%{background-position:0 0;}
-    100%{background-position:0 100px;}
-  }
+/* Sidebar */
+.sidebar{
+  width:260px;
+  min-height:100vh;
+  background:rgba(5,11,20,0.95);
+  border-right:1px solid var(--border);
+  display:flex;
+  flex-direction:column;
+  position:sticky;
+  top:0;
+  height:100vh;
+  overflow-y:auto;
+  flex-shrink:0;
+}
+.sidebar-logo{
+  padding:24px 20px;
+  border-bottom:1px solid var(--border);
+}
+.logo-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:linear-gradient(135deg,var(--cyan),var(--emerald));
+  background-clip:text;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  font-family:'Syne',sans-serif;
+  font-size:20px;
+  font-weight:800;
+  letter-spacing:-0.5px;
+}
+.logo-sub{font-size:11px;color:var(--muted);margin-top:4px;font-family:'JetBrains Mono',monospace;}
+.sidebar-section{padding:16px 12px 8px;font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--muted);font-weight:600;}
+.module-item{
+  margin:2px 8px;
+  padding:10px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:13px;
+  color:var(--muted);
+  transition:all 0.2s;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.module-item:hover{background:var(--surface);color:var(--text);}
+.module-item.active{
+  background:linear-gradient(135deg,rgba(0,245,212,0.12),rgba(16,185,129,0.08));
+  border:1px solid rgba(0,245,212,0.2);
+  color:var(--cyan);
+}
+.module-item.active .mod-dot{background:var(--cyan);box-shadow:0 0 8px var(--cyan);}
+.mod-dot{width:6px;height:6px;border-radius:50%;background:var(--muted);flex-shrink:0;transition:all 0.2s;}
+.offline-badge{
+  margin:16px 12px;
+  padding:10px 12px;
+  background:rgba(16,185,129,0.08);
+  border:1px solid rgba(16,185,129,0.2);
+  border-radius:8px;
+  font-size:11px;
+  color:var(--emerald);
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
 
-  /* LAYOUT */
-  .app{display:flex;min-height:100vh;position:relative;z-index:1;}
+/* Main */
+.main{flex:1;padding:32px;max-width:900px;}
 
-  /* SIDEBAR */
-  .sidebar{
-    width:300px;
-    min-height:100vh;
-    background:linear-gradient(180deg,rgba(8,15,26,0.98) 0%,rgba(5,10,18,0.98) 100%);
-    border-right:1px solid rgba(0,255,136,0.15);
-    display:flex;flex-direction:column;
-    position:fixed;left:0;top:0;bottom:0;
-    overflow-y:auto;
-    z-index:100;
-    box-shadow:4px 0 30px rgba(0,255,136,0.08);
-  }
-  .sidebar::-webkit-scrollbar{width:4px;}
-  .sidebar::-webkit-scrollbar-track{background:transparent;}
-  .sidebar::-webkit-scrollbar-thumb{background:var(--emerald);border-radius:2px;}
+/* Header */
+.page-header{margin-bottom:36px;}
+.page-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:rgba(168,85,247,0.1);
+  border:1px solid rgba(168,85,247,0.25);
+  padding:4px 12px;
+  border-radius:20px;
+  font-size:11px;
+  color:var(--purple);
+  letter-spacing:1px;
+  text-transform:uppercase;
+  font-weight:600;
+  margin-bottom:12px;
+}
+.page-title{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(24px,4vw,38px);
+  font-weight:800;
+  line-height:1.1;
+  background:linear-gradient(135deg,#fff 0%,var(--cyan) 50%,var(--emerald) 100%);
+  background-clip:text;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  letter-spacing:-1px;
+}
+.page-sub{font-size:14px;color:var(--muted);margin-top:8px;}
 
-  .sidebar-header{
-    padding:24px 20px 16px;
-    border-bottom:1px solid rgba(0,255,136,0.1);
-  }
-  .logo-text{
-    font-family:'Orbitron',sans-serif;
-    font-size:13px;
-    font-weight:900;
-    color:var(--emerald);
-    text-shadow:0 0 20px var(--emerald);
-    letter-spacing:2px;
-    line-height:1.4;
-  }
-  .module-badge{
-    display:inline-flex;align-items:center;gap:6px;
-    background:linear-gradient(135deg,rgba(0,255,136,0.15),rgba(0,229,255,0.1));
-    border:1px solid var(--emerald);
-    border-radius:20px;
-    padding:4px 12px;
-    font-size:11px;
-    color:var(--emerald);
-    font-family:'Orbitron',sans-serif;
-    letter-spacing:1px;
-    margin-top:10px;
-    animation:glow-pulse 2s ease-in-out infinite;
-    box-shadow:0 0 15px rgba(0,255,136,0.3);
-  }
-  @keyframes glow-pulse{
-    0%,100%{box-shadow:0 0 15px rgba(0,255,136,0.3);}
-    50%{box-shadow:0 0 30px rgba(0,255,136,0.6),0 0 60px rgba(0,255,136,0.2);}
-  }
+/* Stats row */
+.stats{display:flex;gap:12px;margin-bottom:28px;flex-wrap:wrap;}
+.stat-card{
+  flex:1;min-width:110px;
+  padding:14px 16px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:12px;
+  position:relative;
+  overflow:hidden;
+}
+.stat-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;height:2px;
+}
+.stat-card:nth-child(1)::before{background:var(--cyan);}
+.stat-card:nth-child(2)::before{background:var(--purple);}
+.stat-card:nth-child(3)::before{background:var(--gold);}
+.stat-card:nth-child(4)::before{background:var(--emerald);}
+.stat-num{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;}
+.stat-label{font-size:11px;color:var(--muted);margin-top:2px;}
 
-  .sidebar-section{padding:12px 16px 8px;font-size:10px;letter-spacing:3px;color:rgba(0,229,255,0.5);font-family:'Orbitron',sans-serif;}
+/* Question selector */
+.section-label{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  color:var(--muted);
+  font-weight:600;
+  margin-bottom:12px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+.q-grid{display:flex;flex-direction:column;gap:8px;margin-bottom:24px;}
+.q-item{
+  padding:14px 16px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:10px;
+  cursor:pointer;
+  transition:all 0.2s;
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  font-size:13.5px;
+  line-height:1.5;
+}
+.q-item:hover{
+  background:var(--surface2);
+  border-color:rgba(0,245,212,0.2);
+  transform:translateX(4px);
+}
+.q-item.selected{
+  background:linear-gradient(135deg,rgba(0,245,212,0.1),rgba(16,185,129,0.06));
+  border-color:rgba(0,245,212,0.35);
+  color:#fff;
+}
+.q-num{
+  min-width:26px;height:26px;
+  background:rgba(255,255,255,0.06);
+  border-radius:6px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;color:var(--muted);
+  font-family:'JetBrains Mono',monospace;
+  flex-shrink:0;
+}
+.q-item.selected .q-num{background:var(--cyan);color:#000;}
 
-  .q-btn{
-    width:calc(100% - 16px);
-    margin:3px 8px;
-    background:rgba(0,255,136,0.03);
-    border:1px solid rgba(0,255,136,0.08);
-    border-radius:8px;
-    padding:10px 12px;
-    color:#99c4d4;
-    font-family:'Rajdhani',sans-serif;
-    font-size:12.5px;
-    font-weight:500;
-    text-align:left;
-    cursor:pointer;
-    transition:all 0.25s ease;
-    line-height:1.3;
-    display:flex;align-items:flex-start;gap:8px;
-  }
-  .q-btn:hover{
-    background:rgba(0,255,136,0.1);
-    border-color:rgba(0,255,136,0.4);
-    color:var(--emerald);
-    transform:translateX(4px);
-    box-shadow:0 0 15px rgba(0,255,136,0.15);
-  }
-  .q-btn.active{
-    background:linear-gradient(135deg,rgba(0,255,136,0.15),rgba(0,229,255,0.08));
-    border-color:var(--emerald);
-    color:var(--emerald);
-    box-shadow:0 0 20px rgba(0,255,136,0.25),inset 0 0 20px rgba(0,255,136,0.05);
-    text-shadow:0 0 8px rgba(0,255,136,0.5);
-  }
-  .q-num{
-    background:linear-gradient(135deg,var(--emerald),var(--cyan));
-    background-clip:text;
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    font-family:'Orbitron',sans-serif;
-    font-size:10px;
-    font-weight:900;
-    min-width:22px;
-    padding-top:1px;
-  }
+/* Generate button */
+.gen-btn{
+  width:100%;
+  padding:18px;
+  background:linear-gradient(135deg,var(--cyan),var(--emerald));
+  border:none;
+  border-radius:12px;
+  font-family:'Syne',sans-serif;
+  font-size:16px;
+  font-weight:800;
+  color:#000;
+  cursor:pointer;
+  transition:all 0.3s;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  position:relative;
+  overflow:hidden;
+  letter-spacing:0.5px;
+  margin-bottom:16px;
+}
+.gen-btn::before{
+  content:'';
+  position:absolute;
+  inset:-2px;
+  background:linear-gradient(135deg,var(--cyan),var(--purple),var(--emerald));
+  border-radius:14px;
+  z-index:-1;
+  opacity:0;
+  transition:opacity 0.3s;
+}
+.gen-btn:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(0,245,212,0.3);}
+.gen-btn:hover::before{opacity:1;}
+.gen-btn:active{transform:translateY(0);}
+.gen-btn:disabled{opacity:0.5;cursor:not-allowed;transform:none;}
 
-  .sidebar-footer{
-    margin-top:auto;
-    padding:16px;
-    border-top:1px solid rgba(0,255,136,0.08);
-  }
-  .score-display{
-    background:linear-gradient(135deg,rgba(0,255,136,0.1),rgba(0,229,255,0.05));
-    border:1px solid rgba(0,255,136,0.2);
-    border-radius:10px;
-    padding:12px;
-    text-align:center;
-  }
-  .score-num{font-family:'Orbitron',sans-serif;font-size:28px;font-weight:900;color:var(--emerald);text-shadow:0 0 20px var(--emerald);}
-  .score-label{font-size:11px;color:rgba(0,255,136,0.6);letter-spacing:2px;}
+/* Answer card */
+.answer-card{
+  background:rgba(5,11,20,0.98);
+  border:1px solid rgba(0,245,212,0.2);
+  border-radius:16px;
+  padding:28px;
+  margin-top:24px;
+  position:relative;
+  overflow:hidden;
+  display:none;
+}
+.answer-card.visible{display:block;animation:slideUp 0.4s ease;}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.answer-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--cyan),var(--purple),var(--emerald));
+}
+.answer-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:20px;flex-wrap:wrap;}
+.answer-q-label{
+  font-size:11px;
+  color:var(--cyan);
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  font-weight:600;
+  margin-bottom:4px;
+}
+.answer-q-title{font-size:15px;color:var(--text);line-height:1.4;font-weight:500;}
+.confidence{
+  display:flex;align-items:center;gap:6px;
+  background:rgba(251,191,36,0.1);
+  border:1px solid rgba(251,191,36,0.2);
+  padding:6px 12px;
+  border-radius:8px;
+  font-size:11px;
+  color:var(--gold);
+  white-space:nowrap;
+  flex-shrink:0;
+}
 
-  /* MAIN */
-  .main{
-    margin-left:300px;
-    flex:1;
-    display:flex;
-    flex-direction:column;
-    min-height:100vh;
-  }
+/* Answer content */
+.answer-body{
+  font-size:13.5px;
+  line-height:1.75;
+  color:#cbd5e1;
+}
+.answer-body h3{
+  font-family:'Syne',sans-serif;
+  font-size:13px;
+  font-weight:700;
+  color:var(--cyan);
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  margin:16px 0 8px;
+  display:flex;align-items:center;gap:8px;
+}
+.answer-body h3::before{content:'▸';color:var(--emerald);}
+.answer-body .kw{
+  color:var(--cyan);
+  font-weight:700;
+  font-family:'JetBrains Mono',monospace;
+  font-size:12.5px;
+}
+.answer-body ul{margin:6px 0 6px 0;padding:0;list-style:none;}
+.answer-body ul li{
+  padding:3px 0 3px 18px;
+  position:relative;
+  color:#94a3b8;
+}
+.answer-body ul li::before{
+  content:'›';
+  position:absolute;left:0;
+  color:var(--emerald);font-weight:700;
+}
+.answer-body .intro-box{
+  background:rgba(0,245,212,0.05);
+  border-left:3px solid var(--cyan);
+  padding:10px 14px;
+  border-radius:0 8px 8px 0;
+  margin-bottom:12px;
+  font-size:13px;
+}
+.answer-body .concl-box{
+  background:rgba(16,185,129,0.05);
+  border-left:3px solid var(--emerald);
+  padding:10px 14px;
+  border-radius:0 8px 8px 0;
+  margin-top:12px;
+  font-size:13px;
+  color:#94a3b8;
+}
+.answer-body table{
+  width:100%;
+  border-collapse:collapse;
+  margin:10px 0;
+  font-size:12.5px;
+}
+.answer-body th{
+  background:rgba(0,245,212,0.08);
+  color:var(--cyan);
+  padding:8px 10px;
+  text-align:left;
+  border:1px solid rgba(255,255,255,0.07);
+  font-weight:600;
+}
+.answer-body td{
+  padding:7px 10px;
+  border:1px solid rgba(255,255,255,0.05);
+  color:#94a3b8;
+}
+.answer-body tr:nth-child(even) td{background:rgba(255,255,255,0.02);}
 
-  /* TOP BAR */
-  .topbar{
-    background:rgba(5,10,18,0.95);
-    border-bottom:1px solid rgba(0,229,255,0.1);
-    padding:14px 32px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    position:sticky;top:0;z-index:50;
-    backdrop-filter:blur(20px);
-  }
-  .topbar-title{
-    font-family:'Orbitron',sans-serif;
-    font-size:15px;
-    font-weight:700;
-    background:linear-gradient(135deg,var(--emerald),var(--cyan));
-    background-clip:text;
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    letter-spacing:2px;
-  }
-  .hf-indicator{
-    display:flex;align-items:center;gap:8px;
-    background:rgba(255,100,0,0.1);
-    border:1px solid rgba(255,100,0,0.3);
-    border-radius:20px;
-    padding:6px 14px;
-    font-size:11px;
-    color:#ff9944;
-    font-family:'Share Tech Mono',monospace;
-    opacity:0;
-    transition:all 0.4s;
-  }
-  .hf-indicator.active{opacity:1;box-shadow:0 0 20px rgba(255,100,0,0.4);}
-  .hf-dot{width:8px;height:8px;border-radius:50%;background:#ff6600;animation:hf-blink 1s ease-in-out infinite;}
-  @keyframes hf-blink{0%,100%{opacity:1;box-shadow:0 0 8px #ff6600;}50%{opacity:0.4;}}
+/* Action buttons row */
+.action-row{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap;}
+.act-btn{
+  flex:1;min-width:120px;
+  padding:10px 16px;
+  border-radius:8px;
+  border:1px solid var(--border);
+  background:var(--surface);
+  color:var(--text);
+  font-size:12px;
+  cursor:pointer;
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:600;
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  transition:all 0.2s;
+}
+.act-btn:hover{background:var(--surface2);border-color:rgba(255,255,255,0.15);}
+.act-btn.refine{border-color:rgba(168,85,247,0.3);color:var(--purple);}
+.act-btn.refine:hover{background:rgba(168,85,247,0.08);}
+.act-btn.copy{border-color:rgba(0,245,212,0.3);color:var(--cyan);}
+.act-btn.copy:hover{background:rgba(0,245,212,0.08);}
+.act-btn.mark10{border-color:rgba(251,191,36,0.3);color:var(--gold);}
+.act-btn.mark10:hover{background:rgba(251,191,36,0.08);}
+.act-btn.print{border-color:rgba(16,185,129,0.3);color:var(--emerald);}
+.act-btn.print:hover{background:rgba(16,185,129,0.08);}
 
-  /* CONTENT */
-  .content{padding:28px 32px;flex:1;}
+/* Concise mode */
+.concise-label{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(168,85,247,0.1);
+  border:1px solid rgba(168,85,247,0.25);
+  padding:3px 10px;
+  border-radius:20px;
+  font-size:10px;
+  color:var(--purple);
+  margin-bottom:12px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
 
-  /* UPLOAD ZONE */
-  .upload-zone{
-    background:linear-gradient(135deg,rgba(0,255,136,0.05),rgba(0,229,255,0.03));
-    border:2px dashed rgba(0,255,136,0.3);
-    border-radius:16px;
-    padding:24px 28px;
-    display:flex;align-items:center;justify-content:space-between;
-    margin-bottom:24px;
-    animation:border-dance 3s linear infinite;
-    position:relative;
-    overflow:hidden;
-  }
-  @keyframes border-dance{
-    0%{border-color:rgba(0,255,136,0.3);}
-    33%{border-color:rgba(0,229,255,0.5);}
-    66%{border-color:rgba(191,0,255,0.4);}
-    100%{border-color:rgba(0,255,136,0.3);}
-  }
-  .upload-info{display:flex;align-items:center;gap:16px;}
-  .upload-icon{font-size:36px;color:var(--emerald);text-shadow:0 0 20px var(--emerald);}
-  .upload-text h3{font-family:'Orbitron',sans-serif;font-size:13px;color:var(--emerald);margin-bottom:4px;}
-  .upload-text p{font-size:13px;color:rgba(255,255,255,0.5);}
-  .upload-badges{display:flex;gap:8px;}
-  .badge{
-    background:linear-gradient(135deg,rgba(0,255,136,0.15),rgba(0,229,255,0.1));
-    border:1px solid var(--emerald);
-    border-radius:20px;
-    padding:4px 12px;
-    font-size:11px;
-    color:var(--emerald);
-    font-family:'Share Tech Mono',monospace;
-    box-shadow:0 0 10px rgba(0,255,136,0.2);
-  }
-  .progress-bar{
-    width:200px;
-    height:6px;
-    background:rgba(255,255,255,0.05);
-    border-radius:3px;
-    overflow:hidden;
-    margin-top:8px;
-  }
-  .progress-fill{
-    height:100%;
-    background:linear-gradient(90deg,var(--emerald),var(--cyan));
-    border-radius:3px;
-    width:100%;
-    box-shadow:0 0 10px var(--emerald);
-    animation:shimmer 2s linear infinite;
-  }
-  @keyframes shimmer{
-    0%{box-shadow:0 0 10px var(--emerald);}
-    50%{box-shadow:0 0 20px var(--emerald),0 0 40px rgba(0,255,136,0.3);}
-    100%{box-shadow:0 0 10px var(--emerald);}
-  }
+/* Upload simulator */
+.upload-area{
+  border:2px dashed rgba(0,245,212,0.2);
+  border-radius:12px;
+  padding:24px;
+  text-align:center;
+  cursor:pointer;
+  transition:all 0.2s;
+  margin-bottom:28px;
+  background:rgba(0,245,212,0.02);
+  position:relative;
+}
+.upload-area:hover{border-color:rgba(0,245,212,0.4);background:rgba(0,245,212,0.04);}
+.upload-icon{font-size:28px;color:var(--cyan);margin-bottom:8px;opacity:0.7;}
+.upload-text{font-size:13px;color:var(--muted);}
+.upload-text span{color:var(--cyan);}
+.progress-bar{
+  height:4px;background:rgba(255,255,255,0.06);
+  border-radius:2px;margin-top:12px;overflow:hidden;display:none;
+}
+.progress-fill{
+  height:100%;width:0%;
+  background:linear-gradient(90deg,var(--cyan),var(--emerald));
+  border-radius:2px;
+  transition:width 0.3s;
+}
+.upload-success{
+  display:none;align-items:center;gap:8px;justify-content:center;
+  margin-top:10px;font-size:12px;color:var(--emerald);
+}
 
-  /* CONFIDENCE BADGE */
-  .confidence-badge{
-    background:linear-gradient(135deg,rgba(255,215,0,0.1),rgba(255,165,0,0.08));
-    border:1px solid rgba(255,215,0,0.4);
-    border-radius:12px;
-    padding:14px 20px;
-    margin-bottom:24px;
-    display:flex;align-items:center;gap:14px;
-    box-shadow:0 0 30px rgba(255,215,0,0.1);
-  }
-  .conf-icon{font-size:28px;animation:spin-slow 4s linear infinite;}
-  @keyframes spin-slow{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
-  .conf-text h4{font-family:'Orbitron',sans-serif;font-size:12px;color:#ffd700;letter-spacing:1px;margin-bottom:3px;}
-  .conf-text p{font-size:13px;color:rgba(255,215,0,0.7);}
-  .stars{color:#ffd700;font-size:16px;letter-spacing:2px;}
+/* Status bar */
+.status-bar{
+  position:fixed;bottom:0;left:0;right:0;
+  background:rgba(5,11,20,0.98);
+  border-top:1px solid var(--border);
+  padding:8px 24px;
+  display:flex;align-items:center;gap:16px;
+  font-size:11px;color:var(--muted);
+  backdrop-filter:blur(10px);
+  z-index:100;
+  flex-wrap:wrap;
+}
+.status-item{display:flex;align-items:center;gap:5px;}
+.status-dot{width:5px;height:5px;border-radius:50%;background:var(--emerald);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;};}
 
-  /* QUESTION DISPLAY */
-  .active-question{
-    background:linear-gradient(135deg,rgba(0,255,136,0.06),rgba(0,229,255,0.04));
-    border:1px solid rgba(0,255,136,0.2);
-    border-radius:14px;
-    padding:20px 24px;
-    margin-bottom:20px;
-  }
-  .aq-label{font-size:10px;letter-spacing:3px;color:rgba(0,229,255,0.5);font-family:'Orbitron',sans-serif;margin-bottom:8px;}
-  .aq-text{font-size:18px;font-weight:700;color:#e8f4ff;line-height:1.4;}
+/* Confetti */
+#confetti-canvas{
+  position:fixed;inset:0;pointer-events:none;z-index:9999;
+}
 
-  /* ACTION BUTTONS */
-  .action-row{display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap;}
+/* Scrollbar */
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.1);border-radius:2px;}
 
-  .btn-generate{
-    background:linear-gradient(135deg,#00ff88,#00e5ff);
-    border:none;border-radius:12px;
-    padding:14px 28px;
-    font-family:'Orbitron',sans-serif;
-    font-size:13px;font-weight:700;
-    color:#000;letter-spacing:1px;
-    cursor:pointer;
-    position:relative;overflow:hidden;
-    transition:all 0.3s;
-    box-shadow:0 0 30px rgba(0,255,136,0.5),0 4px 15px rgba(0,0,0,0.3);
-    display:flex;align-items:center;gap:8px;
-  }
-  .btn-generate:hover{
-    transform:translateY(-3px) scale(1.02);
-    box-shadow:0 0 50px rgba(0,255,136,0.8),0 8px 25px rgba(0,0,0,0.4);
-  }
-  .btn-generate::before{
-    content:'';position:absolute;top:-50%;left:-60%;width:40%;height:200%;
-    background:linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent);
-    transform:skewX(-20deg);
-    animation:sweep 3s ease-in-out infinite;
-  }
-  @keyframes sweep{0%,100%{left:-60%;}50%{left:120%;}}
+/* Print */
+@media print{
+  .sidebar,.status-bar,.action-row,.gen-btn,.upload-area,.stats,.q-grid,.page-header,.section-label{display:none!important;}
+  .answer-card{border:1px solid #ccc;color:#000;background:#fff;}
+  .answer-body h3{color:#000;}
+  .answer-body .kw{color:#000;}
+  .answer-body ul li{color:#333;}
+  body{background:#fff;}
+  .answer-body .intro-box,.answer-body .concl-box{border-left:2px solid #333;background:#f9f9f9;}
+}
 
-  .btn-hf{
-    background:linear-gradient(135deg,#ff6600,#ff0066,#bf00ff);
-    border:none;border-radius:12px;
-    padding:14px 22px;
-    font-family:'Orbitron',sans-serif;
-    font-size:12px;font-weight:700;
-    color:#fff;letter-spacing:1px;
-    cursor:pointer;
-    transition:all 0.3s;
-    box-shadow:0 0 25px rgba(255,100,0,0.4);
-    display:flex;align-items:center;gap:8px;
-    position:relative;overflow:hidden;
-  }
-  .btn-hf:hover{transform:translateY(-3px);box-shadow:0 0 50px rgba(255,100,0,0.7);}
+/* Mobile */
+@media(max-width:768px){
+  .app{flex-direction:column;}
+  .sidebar{width:100%;min-height:auto;height:auto;position:static;}
+  .main{padding:16px;}
+  .action-row{gap:6px;}
+  .act-btn{min-width:80px;font-size:11px;padding:8px 10px;}
+}
 
-  .btn-refine{
-    background:linear-gradient(135deg,rgba(191,0,255,0.2),rgba(0,102,255,0.2));
-    border:1px solid var(--purple);
-    border-radius:12px;
-    padding:14px 22px;
-    font-family:'Orbitron',sans-serif;
-    font-size:11px;font-weight:700;
-    color:var(--purple);
-    cursor:pointer;
-    transition:all 0.3s;
-    display:flex;align-items:center;gap:8px;
-  }
-  .btn-refine:hover{background:rgba(191,0,255,0.3);box-shadow:0 0 25px rgba(191,0,255,0.4);transform:translateY(-2px);}
+/* Toast */
+.toast{
+  position:fixed;top:24px;right:24px;
+  background:rgba(0,245,212,0.12);
+  border:1px solid rgba(0,245,212,0.3);
+  color:var(--cyan);
+  padding:10px 18px;
+  border-radius:8px;
+  font-size:13px;
+  z-index:9999;
+  display:flex;align-items:center;gap:8px;
+  transform:translateY(-80px);
+  transition:transform 0.3s;
+  backdrop-filter:blur(10px);
+}
+.toast.show{transform:translateY(0);}
 
-  /* ANSWER CARD */
-  .answer-card{
-    background:linear-gradient(135deg,rgba(10,20,35,0.98),rgba(8,15,28,0.98));
-    border:1px solid rgba(0,255,136,0.2);
-    border-radius:20px;
-    overflow:hidden;
-    margin-bottom:20px;
-    box-shadow:0 0 60px rgba(0,255,136,0.08),0 20px 60px rgba(0,0,0,0.5);
-    transition:all 0.5s;
-  }
-  .answer-card.hf-mode{
-    border-color:rgba(255,100,0,0.5);
-    box-shadow:0 0 60px rgba(255,100,0,0.15),0 20px 60px rgba(0,0,0,0.5);
-  }
-  .answer-card.hf-mode .card-header{
-    background:linear-gradient(135deg,rgba(255,100,0,0.2),rgba(255,0,102,0.15),rgba(191,0,255,0.1));
-    border-bottom-color:rgba(255,100,0,0.3);
-  }
-  .card-header{
-    background:linear-gradient(135deg,rgba(0,255,136,0.08),rgba(0,229,255,0.05));
-    border-bottom:1px solid rgba(0,255,136,0.15);
-    padding:16px 24px;
-    display:flex;align-items:center;justify-content:space-between;
-  }
-  .card-header-left{display:flex;align-items:center;gap:12px;}
-  .notebook-dot{width:12px;height:12px;border-radius:50%;}
-  .dot-r{background:#ff5f57;}
-  .dot-y{background:#febc2e;}
-  .dot-g{background:#28c840;}
-  .card-title{font-family:'Orbitron',sans-serif;font-size:11px;color:var(--emerald);letter-spacing:2px;}
-  .hf-tag{
-    background:linear-gradient(135deg,rgba(255,100,0,0.3),rgba(255,0,102,0.2));
-    border:1px solid rgba(255,100,0,0.5);
-    border-radius:20px;
-    padding:3px 10px;
-    font-size:10px;
-    color:#ff9944;
-    font-family:'Share Tech Mono',monospace;
-    display:none;
-  }
-  .hf-tag.show{display:inline-flex;align-items:center;gap:5px;}
-
-  .card-actions-top{display:flex;gap:8px;}
-  .mini-btn{
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.1);
-    border-radius:8px;
-    padding:6px 12px;
-    font-size:11px;
-    color:rgba(255,255,255,0.6);
-    cursor:pointer;
-    transition:all 0.2s;
-    font-family:'Rajdhani',sans-serif;
-    display:flex;align-items:center;gap:5px;
-  }
-  .mini-btn:hover{background:rgba(255,255,255,0.1);color:#fff;border-color:rgba(255,255,255,0.3);}
-  .mini-btn.gold{border-color:rgba(255,215,0,0.4);color:#ffd700;}
-  .mini-btn.gold:hover{background:rgba(255,215,0,0.1);box-shadow:0 0 15px rgba(255,215,0,0.3);}
-
-  /* ANSWER CONTENT */
-  .answer-body{
-    padding:28px 32px;
-    background:linear-gradient(135deg,rgba(248,252,255,0.97),rgba(240,248,255,0.97));
-    color:#1a2030;
-    font-family:'Rajdhani',sans-serif;
-    font-size:15.5px;
-    line-height:1.75;
-    min-height:300px;
-    position:relative;
-  }
-  .answer-body::before{
-    content:'';
-    position:absolute;top:0;left:70px;width:2px;height:100%;
-    background:rgba(255,100,100,0.3);
-  }
-  .answer-body::after{
-    content:'';
-    position:absolute;top:0;left:0;width:100%;height:100%;
-    background:repeating-linear-gradient(transparent,transparent 34px,rgba(100,150,255,0.1) 34px,rgba(100,150,255,0.1) 35px);
-    pointer-events:none;
-  }
-  .answer-content{position:relative;z-index:1;padding-left:20px;}
-  .answer-title{
-    font-family:'Orbitron',sans-serif;
-    font-size:16px;
-    font-weight:900;
-    color:#0a1628;
-    margin-bottom:16px;
-    text-align:center;
-    border-bottom:2px solid rgba(0,0,200,0.2);
-    padding-bottom:10px;
-    text-transform:uppercase;
-    letter-spacing:1px;
-  }
-  .answer-intro{
-    margin-bottom:14px;
-    color:#1a2030;
-    font-weight:500;
-  }
-  .answer-section{margin-bottom:16px;}
-  .answer-heading{
-    font-size:15px;
-    font-weight:700;
-    color:#0a1628;
-    text-transform:uppercase;
-    letter-spacing:0.5px;
-    margin-bottom:8px;
-    border-left:3px solid #003399;
-    padding-left:8px;
-  }
-  .answer-body ul{list-style:none;padding:0;}
-  .answer-body ul li{
-    padding:2px 0 2px 18px;
-    position:relative;
-    color:#1a2030;
-    font-weight:500;
-  }
-  .answer-body ul li::before{
-    content:'▶';
-    position:absolute;left:0;
-    color:#003399;
-    font-size:9px;
-    top:7px;
-  }
-  .kw{font-weight:800;color:#0000aa;text-transform:uppercase;font-size:13.5px;}
-  .answer-table{
-    width:100%;
-    border-collapse:collapse;
-    margin:10px 0;
-    font-size:13.5px;
-  }
-  .answer-table th{
-    background:rgba(0,0,150,0.08);
-    padding:6px 10px;
-    text-align:left;
-    border:1px solid rgba(0,0,150,0.15);
-    font-weight:800;
-    color:#0a1628;
-    text-transform:uppercase;
-    font-size:12px;
-    letter-spacing:0.5px;
-  }
-  .answer-table td{
-    padding:5px 10px;
-    border:1px solid rgba(0,0,150,0.1);
-    vertical-align:top;
-    color:#1a2030;
-    font-weight:500;
-  }
-  .answer-conclusion{
-    margin-top:14px;
-    background:rgba(0,100,0,0.05);
-    border-left:3px solid #006600;
-    padding:10px 12px;
-    border-radius:0 6px 6px 0;
-    font-weight:600;
-    color:#1a2030;
-    font-size:14px;
-  }
-  .answer-conclusion strong{color:#004400;}
-
-  /* EMPTY STATE */
-  .empty-state{
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    min-height:350px;
-    color:rgba(255,255,255,0.3);
-    gap:16px;
-  }
-  .empty-icon{font-size:60px;animation:pulse-empty 2s ease-in-out infinite;}
-  @keyframes pulse-empty{0%,100%{opacity:0.3;}50%{opacity:0.7;}}
-  .empty-text{font-family:'Orbitron',sans-serif;font-size:13px;letter-spacing:2px;text-align:center;}
-
-  /* FOOTER BAR */
-  .footer-bar{
-    background:rgba(5,10,18,0.97);
-    border-top:1px solid rgba(0,255,136,0.1);
-    padding:10px 32px;
-    display:flex;align-items:center;justify-content:space-between;
-    font-size:12px;
-    color:rgba(255,255,255,0.3);
-  }
-  .footer-left{display:flex;align-items:center;gap:10px;font-family:'Share Tech Mono',monospace;}
-  .footer-dot{width:6px;height:6px;border-radius:50%;background:var(--emerald);animation:glow-pulse 1.5s ease-in-out infinite;}
-  .footer-quote{
-    font-family:'Rajdhani',sans-serif;
-    font-size:13px;
-    font-weight:600;
-    color:rgba(0,255,136,0.5);
-    font-style:italic;
-    animation:quote-fade 6s ease-in-out infinite;
-  }
-  @keyframes quote-fade{0%,100%{opacity:0.5;}50%{opacity:1;}}
-
-  /* TOOLTIP */
-  .rules-btn{
-    background:linear-gradient(135deg,rgba(0,229,255,0.1),rgba(191,0,255,0.08));
-    border:1px solid rgba(0,229,255,0.3);
-    border-radius:20px;
-    padding:6px 14px;
-    font-size:11px;
-    color:var(--cyan);
-    cursor:pointer;
-    font-family:'Share Tech Mono',monospace;
-    transition:all 0.2s;
-    display:flex;align-items:center;gap:6px;
-  }
-  .rules-btn:hover{box-shadow:0 0 20px rgba(0,229,255,0.3);}
-
-  .tooltip-overlay{
-    display:none;
-    position:fixed;top:0;left:0;width:100%;height:100%;
-    background:rgba(0,0,0,0.8);
-    z-index:1000;
-    align-items:center;justify-content:center;
-    backdrop-filter:blur(8px);
-  }
-  .tooltip-overlay.show{display:flex;}
-  .tooltip-box{
-    background:linear-gradient(135deg,rgba(8,15,26,0.99),rgba(13,25,38,0.99));
-    border:1px solid var(--cyan);
-    border-radius:20px;
-    padding:32px;
-    max-width:600px;
-    width:90%;
-    box-shadow:0 0 60px rgba(0,229,255,0.3);
-    position:relative;
-  }
-  .tooltip-title{
-    font-family:'Orbitron',sans-serif;
-    font-size:16px;
-    color:var(--cyan);
-    text-shadow:0 0 20px var(--cyan);
-    margin-bottom:20px;
-    text-align:center;
-    letter-spacing:2px;
-  }
-  .rule-item{
-    display:flex;gap:12px;margin-bottom:14px;padding:12px;
-    background:rgba(0,229,255,0.04);
-    border:1px solid rgba(0,229,255,0.08);
-    border-radius:8px;
-  }
-  .rule-num{
-    font-family:'Orbitron',sans-serif;
-    font-size:18px;font-weight:900;
-    color:var(--cyan);
-    text-shadow:0 0 15px var(--cyan);
-    min-width:30px;
-  }
-  .rule-text{font-size:14px;color:rgba(255,255,255,0.8);font-weight:500;}
-  .rule-text strong{color:var(--emerald);}
-  .close-btn{
-    position:absolute;top:16px;right:16px;
-    background:rgba(255,0,0,0.2);
-    border:1px solid rgba(255,0,0,0.4);
-    border-radius:50%;
-    width:30px;height:30px;
-    display:flex;align-items:center;justify-content:center;
-    cursor:pointer;color:#ff4444;font-size:14px;
-    transition:all 0.2s;
-  }
-  .close-btn:hover{background:rgba(255,0,0,0.4);}
-
-  /* CONFETTI */
-  .confetti-piece{
-    position:fixed;
-    width:10px;height:10px;
-    pointer-events:none;
-    animation:confetti-fall 3s ease-in forwards;
-    z-index:9999;
-  }
-  @keyframes confetti-fall{
-    0%{transform:translateY(0) rotate(0deg);opacity:1;}
-    100%{transform:translateY(100vh) rotate(720deg);opacity:0;}
-  }
-
-  /* LOADING */
-  .loading-overlay{
-    display:none;
-    position:absolute;top:0;left:0;width:100%;height:100%;
-    background:rgba(5,10,18,0.95);
-    z-index:10;
-    align-items:center;justify-content:center;
-    flex-direction:column;gap:16px;
-    border-radius:20px;
-  }
-  .loading-overlay.show{display:flex;}
-  .loader-ring{
-    width:60px;height:60px;
-    border:3px solid rgba(0,255,136,0.2);
-    border-top-color:var(--emerald);
-    border-radius:50%;
-    animation:spin 0.8s linear infinite;
-  }
-  @keyframes spin{100%{transform:rotate(360deg);}}
-  .loading-text{font-family:'Share Tech Mono',monospace;font-size:13px;color:var(--emerald);animation:blink-text 1s ease-in-out infinite;}
-  @keyframes blink-text{0%,100%{opacity:1;}50%{opacity:0.3;}}</style>
+/* Loading spinner on button */
+.spinner{
+  width:16px;height:16px;
+  border:2px solid rgba(0,0,0,0.3);
+  border-top-color:#000;
+  border-radius:50%;
+  animation:spin 0.6s linear infinite;
+  display:none;
+}
+@keyframes spin{to{transform:rotate(360deg);}}
+</style>
 </head>
 <body>
 
-<!-- PARTICLES -->
-<div id="particles"></div>
+<canvas id="confetti-canvas"></canvas>
+<div class="toast" id="toast"><i class="fa fa-check-circle"></i><span id="toast-msg">Copied!</span></div>
 
-<!-- TOOLTIP OVERLAY -->
-<div class="tooltip-overlay" id="rulesOverlay">
-  <div class="tooltip-box">
-    <button class="close-btn" onclick="document.getElementById('rulesOverlay').classList.remove('show')"><i class="fas fa-times"></i></button>
-    <div class="tooltip-title">⚡ VTU EXAMINER RULES ⚡</div>
-    <div class="rule-item"><div class="rule-num">01</div><div class="rule-text"><strong>Structure:</strong> Introduction (2-3 lines) → Headings + Subheadings → Rich bullet points → Conclusion (2-3 lines)</div></div>
-    <div class="rule-item"><div class="rule-num">02</div><div class="rule-text"><strong>Keywords:</strong> BOLD/CAPITALISE all key terms — GREENHOUSE EFFECT, IPCC, NAPCC, Paris Agreement, SDG-13, Coral Bleaching, etc.</div></div>
-    <div class="rule-item"><div class="rule-num">03</div><div class="rule-text"><strong>Accuracy:</strong> Every definition, example (Great Barrier Reef, Himalayas, NAPCC 8 Missions) preserved exactly from documents</div></div>
-    <div class="rule-item"><div class="rule-num">04</div><div class="rule-text"><strong>Length:</strong> 350–480 words = perfect 1-page handwritten answer for 10-mark questions</div></div>
-    <div class="rule-item"><div class="rule-num">05</div><div class="rule-text"><strong>Source:</strong> 100% content from uploaded PDF (60 pages) + DOCX — no hallucinations, no fluff</div></div>
+<div class="app">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-badge"><i class="fa fa-leaf"></i> SDG ExamAce</div>
+      <div class="logo-sub">VTU · Belagavi · Full Marks Engine</div>
+    </div>
+    <div class="sidebar-section">Modules</div>
+    <div class="module-item"><span class="mod-dot"></span>Module 1 — Introduction to SDGs</div>
+    <div class="module-item"><span class="mod-dot"></span>Module 2 — SDG Goals Overview</div>
+    <div class="module-item active"><span class="mod-dot"></span>Module 3 — Climate Change ✦</div>
+    <div class="module-item"><span class="mod-dot"></span>Module 4 — Environment & Policy</div>
+    <div class="module-item"><span class="mod-dot"></span>Module 5 — Case Studies</div>
+    <div class="offline-badge">
+      <i class="fa fa-wifi-slash"></i>
+      <span>100% Offline Ready</span>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="main" style="padding-bottom:60px;">
+    <div class="page-header">
+      <div class="page-tag"><i class="fa fa-bolt"></i> Module 3 Active</div>
+      <div class="page-title">SDG Exam Answer Generator</div>
+      <div class="page-sub">12 Questions · VTU-Precise · Full Marks Guaranteed · Offline Ready</div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat-card"><div class="stat-num" style="color:var(--cyan)">12</div><div class="stat-label">Questions Loaded</div></div>
+      <div class="stat-card"><div class="stat-num" style="color:var(--purple)">10/10</div><div class="stat-label">VTU Score Target</div></div>
+      <div class="stat-card"><div class="stat-num" style="color:var(--gold)">★★★★★</div><div class="stat-label">Examiner Approved</div></div>
+      <div class="stat-card"><div class="stat-num" style="color:var(--emerald)">~1pg</div><div class="stat-label">Answer Length</div></div>
+    </div>
+
+    <!-- Upload simulator -->
+    <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+      <input type="file" id="fileInput" accept=".pdf,.docx" style="display:none" onchange="simulateUpload(this)"/>
+      <div class="upload-icon"><i class="fa fa-file-arrow-up"></i></div>
+      <div class="upload-text">Click to <span>upload your notes</span> for AI sync (PDF / DOCX)</div>
+      <div class="upload-text" style="font-size:11px;margin-top:4px;">Your Module-3 notes are already preloaded ✦</div>
+      <div class="progress-bar" id="progBar"><div class="progress-fill" id="progFill"></div></div>
+      <div class="upload-success" id="uploadSuccess"><i class="fa fa-circle-check"></i> Notes Loaded Successfully — Ready to Generate!</div>
+    </div>
+
+    <!-- Questions -->
+    <div class="section-label"><i class="fa fa-list-check"></i> Select a Question</div>
+    <div class="q-grid" id="questionList"></div>
+
+    <!-- Generate Button -->
+    <button class="gen-btn" id="genBtn" onclick="generateAnswer()">
+      <div class="spinner" id="btnSpinner"></div>
+      <i class="fa fa-wand-magic-sparkles" id="btnIcon"></i>
+      <span id="btnText">GENERATE FULL MARKS ANSWER</span>
+    </button>
+
+    <!-- Answer Card -->
+    <div class="answer-card" id="answerCard">
+      <div class="answer-header">
+        <div>
+          <div class="answer-q-label"><i class="fa fa-star"></i> VTU 10-Mark Answer</div>
+          <div class="answer-q-title" id="answerQTitle"></div>
+        </div>
+        <div class="confidence"><i class="fa fa-award"></i> Examiner Approved ★★★★★ 10/10</div>
+      </div>
+      <div class="concise-label" id="conciseLabel" style="display:none"><i class="fa fa-bolt"></i> Quick Revision Mode — Ultra Concise</div>
+      <div class="answer-body" id="answerBody"></div>
+      <div class="action-row">
+        <button class="act-btn refine" onclick="toggleConcise()"><i class="fa fa-compress"></i> Refine → Concise</button>
+        <button class="act-btn copy" onclick="copyAnswer()"><i class="fa fa-copy"></i> Copy</button>
+        <button class="act-btn print" onclick="window.print()"><i class="fa fa-print"></i> Print</button>
+        <button class="act-btn mark10" id="mark10Btn" onclick="markTen()"><i class="fa fa-check-double"></i> Mark 10/10</button>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="app">
-  <!-- SIDEBAR -->
-  <nav class="sidebar">
-    <div class="sidebar-header">
-      <div class="logo-text">VTU BELAGAVI<br>SDG STUDIES</div>
-      <div class="module-badge">🔥 MODULE-3 ACTIVE</div>
-    </div>
-    <div class="sidebar-section">▸ CLIMATE CHANGE — 12 QUESTIONS</div>
-    <div id="questionList"></div>
-    <div class="sidebar-footer">
-      <div class="score-display">
-        <div class="score-num" id="scoreNum">0</div>
-        <div class="score-label">MARKS EARNED</div>
-        <div style="margin-top:8px;">
-          <div class="stars" id="starsDisplay">☆☆☆☆☆</div>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <!-- MAIN CONTENT -->
-  <main class="main">
-    <!-- TOPBAR -->
-    <div class="topbar">
-      <div class="topbar-title">🌍 CLIMATE CHANGE FULL MARKS ENGINE</div>
-      <div style="display:flex;align-items:center;gap:12px;">
-        <div class="hf-indicator" id="hfIndicator">
-          <div class="hf-dot"></div>
-          🤖 Powered by Hugging Face • 100% Faithful to Files
-        </div>
-        <button class="rules-btn" onclick="document.getElementById('rulesOverlay').classList.add('show')">
-          <i class="fas fa-gavel"></i> VTU RULES
-        </button>
-      </div>
-    </div>
-
-    <!-- CONTENT -->
-    <div class="content">
-      <!-- UPLOAD ZONE -->
-      <div class="upload-zone">
-        <div class="upload-info">
-          <div class="upload-icon"><i class="fas fa-database"></i></div>
-          <div class="upload-text">
-            <h3>✅ DOCUMENTS FULLY LOADED & INDEXED</h3>
-            <p style="margin-bottom:6px;">Both PDF (60 pages) + DOCX Precisely Loaded!</p>
-            <div class="progress-bar"><div class="progress-fill"></div></div>
-          </div>
-        </div>
-        <div class="upload-badges">
-          <div class="badge">📄 PDF 60pg</div>
-          <div class="badge">📝 DOCX</div>
-          <div class="badge">✅ 100%</div>
-        </div>
-      </div>
-
-      <!-- CONFIDENCE BADGE -->
-      <div class="confidence-badge">
-        <div class="conf-icon">🏆</div>
-        <div class="conf-text">
-          <h4>VTU EXAMINER APPROVED ANSWER ENGINE</h4>
-          <p>Every answer structured for 10/10 — verified against VTU Belagavi Module-3 SDG syllabus</p>
-          <div class="stars">★★★★★</div>
-        </div>
-        <div style="margin-left:auto;text-align:center;">
-          <div style="font-family:'Orbitron',sans-serif;font-size:22px;font-weight:900;color:#ffd700;text-shadow:0 0 20px #ffd700;">10/10</div>
-          <div style="font-size:11px;color:rgba(255,215,0,0.6);">FULL MARKS</div>
-        </div>
-      </div>
-
-      <!-- ACTIVE QUESTION -->
-      <div class="active-question">
-        <div class="aq-label">▸ SELECTED QUESTION</div>
-        <div class="aq-text" id="activeQuestionText">← Select any question from the sidebar to begin</div>
-      </div>
-
-      <!-- ACTION BUTTONS -->
-      <div class="action-row">
-        <button class="btn-generate" onclick="generateAnswer(false)">
-          <i class="fas fa-rocket"></i> 🚀 GENERATE FULL MARKS ANSWER ✨
-        </button>
-        <button class="btn-hf" onclick="generateAnswer(true)">
-          🤖 HUGGING FACE MODE
-        </button>
-        <button class="btn-refine" onclick="refineAnswer()">
-          ⚡ REFINE → Ultra Concise Mode
-        </button>
-      </div>
-
-      <!-- ANSWER CARD -->
-      <div class="answer-card" id="answerCard">
-        <div class="card-header">
-          <div class="card-header-left">
-            <div class="notebook-dot dot-r"></div>
-            <div class="notebook-dot dot-y"></div>
-            <div class="notebook-dot dot-g"></div>
-            <div class="card-title" id="cardTitle">ANSWER PREVIEW</div>
-            <div class="hf-tag" id="hfTag">🤖 HF Enhanced</div>
-          </div>
-          <div class="card-actions-top">
-            <button class="mini-btn" onclick="copyAnswer()"><i class="fas fa-copy"></i> Copy</button>
-            <button class="mini-btn" onclick="window.print()"><i class="fas fa-print"></i> Print</button>
-            <button class="mini-btn gold" id="markBtn" onclick="markTen()"><i class="fas fa-trophy"></i> Mark 10/10</button>
-          </div>
-        </div>
-        <div style="position:relative;">
-          <div class="loading-overlay" id="loadingOverlay">
-            <div class="loader-ring"></div>
-            <div class="loading-text" id="loadingText">GENERATING EXAM-READY ANSWER...</div>
-          </div>
-          <div class="answer-body">
-            <div class="answer-content" id="answerContent">
-              <div class="empty-state">
-                <div class="empty-icon">📖</div>
-                <div class="empty-text">SELECT A QUESTION & HIT<br>🚀 GENERATE FOR FULL MARKS</div>
-                <div style="font-size:12px;color:rgba(0,255,136,0.4);font-family:'Share Tech Mono',monospace;">ALL 12 QUESTIONS LOADED • VTU EXAM-READY</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- end content -->
-
-    <!-- FOOTER -->
-    <div class="footer-bar">
-      <div class="footer-left">
-        <div class="footer-dot"></div>
-        <span>VTU BELAGAVI • MODULE-3 SDG • CLIMATE CHANGE</span>
-        <span style="opacity:0.3">|</span>
-        <span>12 QUESTIONS LOADED</span>
-      </div>
-      <div class="footer-quote" id="footerQuote">"Study Smart, Score Full Marks — One Question at a Time 🔥"</div>
-    </div>
-  </main>
+<!-- Status Bar -->
+<div class="status-bar">
+  <div class="status-item"><div class="status-dot"></div> Offline Ready</div>
+  <div class="status-item"><i class="fa fa-shield-halved" style="color:var(--cyan)"></i> Content from Notes Only</div>
+  <div class="status-item"><i class="fa fa-ruler" style="color:var(--purple)"></i> ~1 Page Length</div>
+  <div class="status-item"><i class="fa fa-bold" style="color:var(--gold)"></i> Keywords Bolded</div>
+  <div class="status-item"><i class="fa fa-university" style="color:var(--emerald)"></i> VTU Belagavi Standard</div>
 </div>
 
 <script>
-// ============================================================
-// DATA — 12 QUESTIONS + ANSWERS (100% from uploaded documents)
-// ============================================================
+// ═══════════════════════════════════════════════
+//  DATA — 12 Questions + Full + Concise Answers
+// ═══════════════════════════════════════════════
 const questions = [
   "Explain the basic science of climate change and describe the greenhouse effect with suitable diagrams and examples.",
   "Differentiate between natural greenhouse effect and enhanced greenhouse effect and explain their role in global warming.",
@@ -845,504 +622,830 @@ const questions = [
 ];
 
 const answers = [
-  // Q1
-  `<div class="answer-title">Basic Science of Climate Change & Greenhouse Effect</div>
-<div class="answer-intro"><span class="kw">Climate Change</span> refers to long-term changes in temperature, rainfall patterns, wind systems, and other climatic conditions of the Earth. These changes occur over decades or centuries and are mainly caused by the increase in <span class="kw">greenhouse gases (GHGs)</span> due to human activities such as burning fossil fuels, deforestation, and industrialization. The <span class="kw">IPCC (Intergovernmental Panel on Climate Change)</span> confirms that human activities are the primary driver of recent global temperature rise.</div>
-<div class="answer-section"><div class="answer-heading">1. Earth's Energy Balance</div>
-The Earth receives energy from the Sun in the form of <span class="kw">solar radiation</span>. The balance of incoming and outgoing energy determines Earth's temperature:
-<ul><li>Sun emits <span class="kw">shortwave radiation</span> (visible light + UV)</li><li>Some energy is reflected by clouds, ice, and bright surfaces back into space</li><li>Remaining energy is absorbed by land, oceans, and atmosphere</li><li>Earth re-emits energy as <span class="kw">infrared (heat) radiation</span></li><li>When GHGs trap more heat, the balance is disturbed → <span class="kw">Global Warming</span> occurs</li></ul></div>
-<div class="answer-section"><div class="answer-heading">2. The Greenhouse Effect</div>
-<strong>Definition:</strong> The <span class="kw">Greenhouse Effect</span> is the process by which certain atmospheric gases trap heat from Earth's surface and prevent it from escaping into space, thereby warming the planet.<br><br>
-<strong>How it works:</strong>
-<ul><li>Sunlight passes through atmosphere → absorbed by Earth's surface</li><li>Earth emits <span class="kw">infrared radiation</span> (heat)</li><li>GHGs (CO₂, CH₄, N₂O) absorb and re-emit this heat</li><li>Trapped heat warms atmosphere — keeps Earth at ~<span class="kw">15°C</span></li><li>Without this effect, Earth would be approximately <span class="kw">–18°C</span></li></ul></div>
-<div class="answer-section"><div class="answer-heading">3. Major Greenhouse Gases</div>
-<table class="answer-table"><tr><th>Gas</th><th>Sources</th><th>Impact</th></tr>
-<tr><td><span class="kw">CO₂</span></td><td>Fossil fuels, deforestation</td><td>Major contributor to warming</td></tr>
-<tr><td><span class="kw">CH₄</span></td><td>Livestock, landfills, rice</td><td>Traps more heat than CO₂</td></tr>
-<tr><td><span class="kw">N₂O</span></td><td>Fertilizers, agriculture</td><td>Powerful GHG</td></tr>
-<tr><td><span class="kw">F-gases</span></td><td>Refrigeration, electronics</td><td>Extremely high warming potential</td></tr></table></div>
-<div class="answer-section"><div class="answer-heading">4. Examples of Climate Change</div>
-<ul><li>Rising global temperatures</li><li>Melting glaciers and polar ice</li><li>Sea-level rise and coastal flooding</li><li>Extreme weather events (floods, droughts)</li><li><span class="kw">Coral bleaching</span> in the Great Barrier Reef due to rising ocean temperatures</li></ul></div>
-<div class="answer-conclusion"><strong>Conclusion:</strong> The science of climate change revolves around Earth's energy imbalance caused by excessive GHG emissions. The <span class="kw">Enhanced Greenhouse Effect</span> intensifies natural warming, making mitigation through <span class="kw">SDG-13 (Climate Action)</span> essential for sustainable development.</div>`,
+// Q1 — Greenhouse Effect & Basic Science
+{
+full:`<div class="intro-box"><span class="kw">Climate change</span> refers to long-term changes in temperature, rainfall patterns, wind systems, and other climatic conditions caused mainly by the increase in <span class="kw">greenhouse gases</span> due to human activities like burning <span class="kw">fossil fuels</span>, <span class="kw">deforestation</span>, and <span class="kw">industrialization</span>. The <span class="kw">IPCC</span> confirms human activities are the primary cause of rising global temperatures.</div>
 
-  // Q2
-  `<div class="answer-title">Natural vs Enhanced Greenhouse Effect & Global Warming</div>
-<div class="answer-intro">The <span class="kw">Greenhouse Effect</span> is a natural atmospheric process essential for life on Earth. However, human activities have intensified this process, causing <span class="kw">Global Warming</span>. The <span class="kw">IPCC</span> confirms that the <span class="kw">Enhanced Greenhouse Effect</span> is the primary cause of modern climate change.</div>
-<div class="answer-section"><div class="answer-heading">1. Natural Greenhouse Effect</div>
-<strong>Definition:</strong> The <span class="kw">Natural Greenhouse Effect</span> is the natural warming of Earth's atmosphere by naturally occurring greenhouse gases that trap part of the heat radiated from Earth's surface.<br><br>
-<strong>Process:</strong>
-<ul><li>Solar radiation from Sun reaches Earth's surface</li><li>Surface absorbs energy and emits <span class="kw">infrared radiation</span></li><li>Natural GHGs absorb part of this heat and reflect it back</li><li>Remaining heat escapes into space</li><li>Maintains Earth's temperature at ~<span class="kw">15°C</span></li></ul>
-<strong>Importance:</strong>
-<ul><li>Maintains stable global temperature for life</li><li>Supports ecosystems and biodiversity</li><li>Without it, Earth would be approximately <span class="kw">–18°C</span></li></ul></div>
-<div class="answer-section"><div class="answer-heading">2. Enhanced Greenhouse Effect</div>
-<strong>Definition:</strong> The <span class="kw">Enhanced Greenhouse Effect</span> is the increase in heat trapping in Earth's atmosphere due to excess concentration of GHGs from human activities, leading to abnormal global temperature rise (<span class="kw">Global Warming</span>).<br><br>
-<strong>Causes (Human Activities):</strong>
-<ul><li>Burning fossil fuels (coal, petrol, diesel)</li><li>Deforestation and land-use change</li><li>Industrial activities and factories</li><li>Agriculture and livestock farming</li><li>Use of chemical fertilizers</li></ul></div>
-<div class="answer-section"><div class="answer-heading">3. Key Differences</div>
-<table class="answer-table"><tr><th>Aspect</th><th>Natural GHE</th><th>Enhanced GHE</th></tr>
-<tr><td>Definition</td><td>Natural warming by natural GHGs</td><td>Increased warming by human activities</td></tr>
+<h3>Earth's Energy Balance</h3>
+<ul>
+<li>Sun emits <span class="kw">shortwave radiation</span> (visible light + UV)</li>
+<li>Some energy is reflected by clouds and ice; rest is absorbed by land and oceans</li>
+<li>Earth re-emits energy as <span class="kw">infrared radiation</span> (heat)</li>
+<li>When incoming radiation = outgoing heat → temperature is stable</li>
+<li>When <span class="kw">greenhouse gases</span> trap more heat → <span class="kw">global warming</span> occurs</li>
+</ul>
+
+<h3>Greenhouse Effect — Definition</h3>
+<p style="margin:4px 0 8px;color:#94a3b8;font-size:13px;">The process by which certain gases in the atmosphere trap heat from Earth's surface and prevent it from escaping to space, thereby warming the planet.</p>
+
+<h3>How Greenhouse Effect Works</h3>
+<ul>
+<li>Sunlight passes through atmosphere and reaches Earth</li>
+<li>Earth's surface absorbs energy and becomes warm</li>
+<li>Earth emits heat as <span class="kw">infrared radiation</span></li>
+<li>Greenhouse gases absorb and trap part of this heat</li>
+<li>Trapped heat warms the atmosphere and surface</li>
+</ul>
+<p style="margin:4px 0 8px;color:#94a3b8;font-size:13px;">Without greenhouse effect, Earth's average temperature would be <span class="kw">–18°C</span> instead of current <span class="kw">+15°C</span>.</p>
+
+<h3>Major Greenhouse Gases</h3>
+<table>
+<tr><th>Gas</th><th>Sources</th><th>Impact</th></tr>
+<tr><td><span class="kw">CO₂</span></td><td>Burning fossil fuels, deforestation</td><td>Major global warming contributor</td></tr>
+<tr><td><span class="kw">CH₄</span></td><td>Livestock, rice cultivation, landfills</td><td>Traps more heat than CO₂</td></tr>
+<tr><td><span class="kw">N₂O</span></td><td>Fertilizers, agriculture</td><td>Powerful greenhouse gas</td></tr>
+<tr><td><span class="kw">F-gases</span></td><td>Refrigeration, electronics</td><td>Extremely high warming potential</td></tr>
+</table>
+
+<h3>Examples of Climate Change</h3>
+<ul>
+<li>Rising global temperatures</li>
+<li>Melting glaciers and polar ice</li>
+<li>Sea-level rise</li>
+<li>Extreme events — floods, droughts, wildfires</li>
+<li><span class="kw">Coral bleaching</span> in the Great Barrier Reef due to rising ocean temperatures</li>
+</ul>
+
+<div class="concl-box">The <span class="kw">greenhouse effect</span> is a natural process vital for life, but human-induced increase in greenhouse gases has intensified it, leading to <span class="kw">global warming</span> and severe environmental impacts. Controlling <span class="kw">greenhouse gas emissions</span> is essential to restore Earth's energy balance.</div>`,
+
+concise:`<div class="intro-box"><span class="kw">Climate change</span> = long-term changes in climate due to excess <span class="kw">greenhouse gases</span> from human activities (fossil fuels, deforestation). <span class="kw">IPCC</span> confirms human cause.</div>
+<h3>Greenhouse Effect</h3>
+<ul>
+<li>Sun → shortwave radiation → Earth absorbs → emits <span class="kw">infrared heat</span></li>
+<li>Greenhouse gases trap heat → Earth warms = <span class="kw">Greenhouse Effect</span></li>
+<li>Without it: Earth = <span class="kw">–18°C</span>; With it: <span class="kw">+15°C</span></li>
+</ul>
+<h3>Key GHGs</h3>
+<ul>
+<li><span class="kw">CO₂</span> — fossil fuels; <span class="kw">CH₄</span> — livestock/landfills; <span class="kw">N₂O</span> — fertilizers; <span class="kw">F-gases</span> — refrigeration</li>
+</ul>
+<h3>Examples</h3>
+<ul><li>Rising temps, glacier melt, sea-level rise, coral bleaching (Great Barrier Reef)</li></ul>
+<div class="concl-box">Enhanced greenhouse effect from human activities → <span class="kw">global warming</span> → urgent need to cut emissions.</div>`
+},
+
+// Q2 — Natural vs Enhanced Greenhouse Effect
+{
+full:`<div class="intro-box">The <span class="kw">greenhouse effect</span> is a natural process that keeps Earth warm. However, human activities have increased <span class="kw">greenhouse gas</span> concentrations, intensifying this effect and causing <span class="kw">global warming</span>. The <span class="kw">IPCC</span> confirms the <span class="kw">enhanced greenhouse effect</span> is the main cause of modern climate change.</div>
+
+<h3>Natural Greenhouse Effect</h3>
+<p style="margin:4px 0 6px;color:#94a3b8;font-size:13px;"><strong>Definition:</strong> Natural warming of Earth's atmosphere caused by naturally occurring greenhouse gases trapping part of the heat radiated from Earth's surface.</p>
+<ul>
+<li>Solar radiation reaches Earth → surface absorbs → emits infrared heat</li>
+<li>Natural GHGs absorb part of heat → reflect back to Earth</li>
+<li>Remaining heat escapes to space</li>
+<li>Maintains Earth's average temperature at <span class="kw">~15°C</span></li>
+<li>Makes planet suitable for life and supports biodiversity</li>
+<li>Without it, Earth = <span class="kw">–18°C</span></li>
+</ul>
+
+<h3>Enhanced Greenhouse Effect</h3>
+<p style="margin:4px 0 6px;color:#94a3b8;font-size:13px;"><strong>Definition:</strong> Increase in heat trapping due to excess concentration of greenhouse gases caused by human activities, leading to <span class="kw">global warming</span>.</p>
+<ul>
+<li>Burning <span class="kw">fossil fuels</span> (coal, petrol, diesel)</li>
+<li><span class="kw">Deforestation</span> and industrial activities</li>
+<li>Agriculture, livestock farming, chemical fertilizers</li>
+</ul>
+
+<h3>Comparison Table</h3>
+<table>
+<tr><th>Aspect</th><th>Natural GHE</th><th>Enhanced GHE</th></tr>
+<tr><td>Definition</td><td>Natural warming of Earth</td><td>Excess warming due to humans</td></tr>
 <tr><td>Cause</td><td>Natural atmospheric gases</td><td>Fossil fuels, deforestation</td></tr>
 <tr><td>GHG Level</td><td>Balanced and stable</td><td>Excessive concentration</td></tr>
-<tr><td>Impact</td><td>Supports life at 15°C</td><td>Causes Global Warming</td></tr>
-<tr><td>Environment</td><td>Supports ecosystems</td><td>Extreme weather, damage</td></tr></table></div>
-<div class="answer-section"><div class="answer-heading">4. Role in Global Warming</div>
-When GHG concentrations increase due to Enhanced GHE:
-<ul><li>More heat is trapped in the atmosphere</li><li>Less heat escapes into space</li><li>Earth's average temperature rises</li><li>Results in: melting glaciers, sea-level rise, extreme weather events</li><li><span class="kw">Coral bleaching</span> in the Great Barrier Reef due to rising temperatures</li></ul></div>
-<div class="answer-conclusion"><strong>Conclusion:</strong> While the <span class="kw">Natural Greenhouse Effect</span> is essential for life, the <span class="kw">Enhanced Greenhouse Effect</span> driven by human activities is causing dangerous <span class="kw">Global Warming</span>. Urgent action aligned with <span class="kw">SDG-13</span> is needed to reduce GHG emissions.</div>`,
+<tr><td>Climate Impact</td><td>Maintains suitable temp</td><td>Causes global warming</td></tr>
+<tr><td>Environment</td><td>Supports ecosystems</td><td>Extreme weather, damage</td></tr>
+</table>
 
-  // Q3
-  `<div class="answer-title">Major Environmental Consequences of Climate Change</div>
-<div class="answer-intro"><span class="kw">Climate Change</span>, caused by increasing GHG concentrations, has serious environmental consequences. According to the <span class="kw">IPCC</span>, these include loss of biodiversity, coral reef bleaching, desertification, and forest fires — all of which threaten global ecosystems and human well-being.</div>
-<div class="answer-section"><div class="answer-heading">1. Loss of Biodiversity</div>
-<strong>Meaning:</strong> <span class="kw">Biodiversity</span> is the variety of plants, animals, and microorganisms in ecosystems. Climate change disrupts habitats, forcing species to migrate or face extinction.<br><br>
-<strong>Causes:</strong> Rising temperatures, habitat destruction, changing rainfall, ocean warming<br>
-<strong>Impacts:</strong>
-<ul><li>Species extinction across ecosystems</li><li>Disturbance of <span class="kw">food chains</span> and ecological balance</li><li>Melting Arctic ice threatens animals dependent on sea ice for survival</li></ul></div>
-<div class="answer-section"><div class="answer-heading">2. Coral Reef Bleaching</div>
-<strong>Meaning:</strong> Coral reefs are marine ecosystems where corals live in symbiosis with microscopic algae. When ocean temperatures rise, corals expel these algae, turning white — known as <span class="kw">Coral Bleaching</span>.<br><br>
-<strong>Causes:</strong> Rising ocean temperatures, <span class="kw">ocean acidification</span>, increased solar radiation<br>
-<strong>Effects:</strong>
-<ul><li>Death of coral reefs — loss of marine biodiversity</li><li>Decline in fish populations</li><li>Large-scale bleaching in the <span class="kw">Great Barrier Reef</span> (Australia) observed due to rising ocean temperatures</li></ul></div>
-<div class="answer-section"><div class="answer-heading">3. Desertification</div>
-<strong>Meaning:</strong> <span class="kw">Desertification</span> is the process by which fertile land gradually becomes desert-like due to climate change and human activities.<br><br>
-<strong>Causes:</strong> Reduced rainfall, high temperatures, deforestation, poor land management<br>
-<strong>Effects:</strong>
-<ul><li>Loss of agricultural productivity and soil degradation</li><li>Water scarcity in dry and semi-arid regions</li><li>Displacement and migration of populations</li></ul></div>
-<div class="answer-section"><div class="answer-heading">4. Forest Fires</div>
-<strong>Meaning:</strong> <span class="kw">Forest Fires</span> are uncontrolled fires spreading rapidly through forests and grasslands. Climate change increases their frequency and intensity.<br><br>
-<strong>Causes:</strong> High temperatures, dry vegetation, low rainfall, lightning or human activities<br>
-<strong>Effects:</strong>
-<ul><li>Destruction of forests, wildlife habitats, and biodiversity</li><li>Air pollution from smoke and carbon emissions</li><li>Forest fires release large amounts of <span class="kw">CO₂</span>, further intensifying Global Warming</li></ul></div>
-<div class="answer-conclusion"><strong>Conclusion:</strong> The environmental consequences of climate change — <span class="kw">Biodiversity Loss, Coral Bleaching, Desertification, and Forest Fires</span> — form a dangerous feedback cycle. Achieving <span class="kw">SDG-13 (Climate Action)</span> and <span class="kw">SDG-15 (Life on Land)</span> is critical to reversing these trends.</div>`,
+<h3>Role in Global Warming</h3>
+<ul>
+<li>More GHGs → more heat trapped → less heat escapes to space</li>
+<li>Earth's average temperature rises → <span class="kw">global warming</span></li>
+<li>Results: rising temperatures, melting glaciers, sea-level rise, extreme weather</li>
+<li>Example: <span class="kw">Coral bleaching</span> in Great Barrier Reef due to rising ocean temps</li>
+</ul>
 
-  // Q4
-  `<div class="answer-title">Impacts of Climate Change on Water Resources</div>
-<div class="answer-intro"><span class="kw">Water resources</span> are essential for human survival, agriculture, and ecosystems. <span class="kw">Climate Change</span> significantly alters the global water cycle. The <span class="kw">IPCC</span> warns that rising temperatures and changing rainfall patterns are increasing extreme water events like floods and droughts.</div>
-<div class="answer-section"><div class="answer-heading">1. Glacier Melting</div>
-<strong>Meaning:</strong> <span class="kw">Glaciers</span> are large ice masses storing freshwater in mountainous and polar regions. Rising temperatures cause accelerated melting.<br><br>
-<strong>Causes:</strong> Increased global temperatures, reduced snowfall, increased solar radiation<br>
-<strong>Impacts:</strong>
-<ul><li>Reduced long-term freshwater supply for millions</li><li>Rising sea levels threatening coastal areas</li><li>Increased risk of <span class="kw">glacial lake floods (GLOFs)</span></li><li>Rapid melting of <span class="kw">Himalayan glaciers</span> threatens water supply for millions in South Asia</li></ul></div>
-<div class="answer-section"><div class="answer-heading">2. Groundwater Depletion</div>
-<strong>Meaning:</strong> <span class="kw">Groundwater</span> is water stored beneath Earth's surface in <span class="kw">aquifers</span>. Climate change reduces recharge due to irregular rainfall and increased evaporation.<br><br>
-<strong>Causes:</strong> Reduced rainfall, increased evaporation, over-extraction for agriculture<br>
-<strong>Impacts:</strong>
-<ul><li>Decline in <span class="kw">groundwater levels</span></li><li>Drying of wells and boreholes</li><li>Water shortages for agriculture and drinking water supply</li></ul></div>
-<div class="answer-section"><div class="answer-heading">3. Floods</div>
-<strong>Meaning:</strong> <span class="kw">Floods</span> occur when excessive rainfall or river overflow spreads water over land. Warmer atmosphere holds more moisture, intensifying rainfall.<br><br>
-<strong>Causes:</strong> Heavy rainfall, rapid glacier melting, storm surges and cyclones<br>
-<strong>Impacts:</strong>
-<ul><li>Damage to infrastructure, property, and human life</li><li>Soil erosion and <span class="kw">land degradation</span></li><li>Contamination of drinking water sources</li><li>Destruction of crops and economic activities</li></ul></div>
-<div class="answer-section"><div class="answer-heading">4. Droughts</div>
-<strong>Meaning:</strong> <span class="kw">Drought</span> is a prolonged period of low rainfall leading to water shortages. Climate change increases drought frequency.<br><br>
-<strong>Causes:</strong> Irregular monsoon patterns, increased evaporation, reduced groundwater recharge<br>
-<strong>Impacts:</strong>
-<ul><li>Crop failure and <span class="kw">food insecurity</span></li><li>Drinking water scarcity in rural areas</li><li><span class="kw">Desertification</span> and land degradation</li><li>Migration of vulnerable populations</li></ul></div>
-<div class="answer-conclusion"><strong>Conclusion:</strong> Climate change threatens all aspects of water security — from <span class="kw">Glacier Melting</span> to <span class="kw">Groundwater Depletion, Floods, and Droughts</span>. Sustainable water management aligned with <span class="kw">SDG-6 (Clean Water)</span> and India's <span class="kw">National Water Mission (NAPCC)</span> is urgently needed.</div>`,
+<div class="concl-box">While the <span class="kw">natural greenhouse effect</span> is essential for life, the <span class="kw">enhanced greenhouse effect</span> caused by human activities is disrupting Earth's climate. Reducing <span class="kw">greenhouse gas emissions</span> is critical to limiting global warming.</div>`,
 
-  // Q5
-  `<div class="answer-title">Climate Change Effects on Agriculture, Crop Failure, Pest Spread & Food Insecurity</div>
-<div class="answer-intro"><span class="kw">Agriculture</span> depends critically on temperature, rainfall, humidity, and seasonal cycles. <span class="kw">Climate Change</span> — through rising temperatures, erratic rainfall, and extreme events — directly threatens global food production. The <span class="kw">IPCC</span> identifies climate change as one of the greatest threats to agricultural sustainability and <span class="kw">Food Security (SDG-2)</span>.</div>
-<div class="answer-section"><div class="answer-heading">1. Effects of Climate Change on Agriculture</div>
-<strong>Rising Temperatures:</strong>
-<ul><li>Reduces crop growth and shortens growing seasons</li><li>Causes <span class="kw">heat stress</span> in plants — reduces productivity</li><li>Increases <span class="kw">evaporation</span> of soil moisture</li></ul>
-<strong>Irregular Rainfall:</strong>
-<ul><li>Water shortages at critical crop growth stages</li><li>Flooding in agricultural lands causing soil erosion</li></ul>
-<strong>Extreme Weather Events:</strong>
-<ul><li>Floods, droughts, and storms destroy crops and infrastructure</li></ul></div>
-<div class="answer-section"><div class="answer-heading">2. Crop Failure</div>
-<strong>Meaning:</strong> <span class="kw">Crop Failure</span> occurs when crops are destroyed before harvesting due to unfavorable environmental conditions.<br><br>
-<strong>Causes:</strong> Heat stress, drought, flooding, soil degradation<br>
-<strong>Effects:</strong>
-<ul><li>Loss of agricultural income for farmers</li><li>Reduced food production and economic losses</li><li>Most severe in regions dependent on seasonal rainfall</li></ul></div>
-<div class="answer-section"><div class="answer-heading">3. Spread of Pests and Diseases</div>
-Climate change creates favorable conditions for pests, insects, and plant diseases.<br><br>
-<strong>Causes:</strong>
-<ul><li>Warmer temperatures increase <span class="kw">pest reproduction rates</span></li><li>Changes in humidity encourage <span class="kw">fungal diseases</span></li><li>Longer growing seasons allow pests to survive longer</li></ul>
-<strong>Effects:</strong>
-<ul><li>Widespread damage to crops and plants</li><li>Increased use of <span class="kw">pesticides</span> → higher costs</li><li>Reduced agricultural productivity overall</li></ul></div>
-<div class="answer-section"><div class="answer-heading">4. Food Insecurity</div>
-<strong>Meaning:</strong> <span class="kw">Food Insecurity</span> is when people lack reliable access to sufficient, safe, and nutritious food.<br><br>
-<strong>Causes:</strong> Reduced crop yields, crop failures, rising food prices<br>
-<strong>Effects:</strong>
-<ul><li>Malnutrition and hunger, especially in developing countries</li><li>Poverty in rural communities dependent on agriculture</li><li>Social and economic instability</li><li>Particularly severe where agriculture is the primary livelihood</li></ul></div>
-<div class="answer-conclusion"><strong>Conclusion:</strong> Climate change creates a triple threat to agriculture through <span class="kw">Crop Failure, Pest Spread, and Food Insecurity</span>. Achieving <span class="kw">SDG-2 (Zero Hunger)</span> requires urgent adoption of climate-smart agriculture and the <span class="kw">National Mission for Sustainable Agriculture (NAPCC)</span>.</div>`,
+concise:`<div class="intro-box"><span class="kw">Natural GHE</span> = vital natural warming process. <span class="kw">Enhanced GHE</span> = excess warming due to human activities → <span class="kw">global warming</span>.</div>
+<table>
+<tr><th>Aspect</th><th>Natural GHE</th><th>Enhanced GHE</th></tr>
+<tr><td>Cause</td><td>Natural gases</td><td>Fossil fuels, deforestation</td></tr>
+<tr><td>GHG Level</td><td>Stable</td><td>Excessive</td></tr>
+<tr><td>Impact</td><td>Supports life (~15°C)</td><td>Global warming, extreme weather</td></tr>
+</table>
+<h3>Role in Global Warming</h3>
+<ul>
+<li>Excess GHGs → more heat trapped → temperature rises</li>
+<li>Effects: glacier melt, sea rise, floods, coral bleaching</li>
+</ul>
+<div class="concl-box">Reducing <span class="kw">greenhouse gas emissions</span> is the key to controlling global warming.</div>`
+},
 
-  // Q6
-  `<div class="answer-title">Climate Change Mitigation — Definition & Major Strategies</div>
-<div class="answer-intro"><span class="kw">Climate Change Mitigation</span> refers to actions and strategies implemented to reduce or prevent <span class="kw">Greenhouse Gas (GHG)</span> emissions and limit global warming. The <span class="kw">IPCC</span> emphasizes that mitigation is essential to prevent catastrophic climate impacts. Mitigation aims to reduce GHG sources, increase carbon sinks, and promote sustainable energy use.</div>
-<div class="answer-section"><div class="answer-heading">1. Transition to Renewable Energy</div>
-<ul><li><span class="kw">Solar energy</span> — photovoltaic panels, solar thermal</li><li><span class="kw">Wind energy</span> — wind turbines and farms</li><li><span class="kw">Hydropower</span> — dams and flowing water</li><li><span class="kw">Geothermal energy</span> — heat from Earth's interior</li><li><span class="kw">Biomass energy</span> — organic materials and biofuels</li></ul>
-Reduces CO₂ emissions and dependence on fossil fuels.</div>
-<div class="answer-section"><div class="answer-heading">2. Energy Efficiency</div>
-Using less energy to perform the same task:
-<ul><li><span class="kw">LED lighting</span> systems</li><li>Energy-efficient buildings and appliances</li><li>Smart electricity grids</li><li>Reduces energy consumption and GHG emissions</li></ul></div>
-<div class="answer-section"><div class="answer-heading">3. Sustainable Transportation</div>
-<ul><li>Use of <span class="kw">electric vehicles (EVs)</span></li><li>Development of public transportation systems</li><li>Promotion of cycling and walking infrastructure</li><li>Use of <span class="kw">biofuels</span></li></ul></div>
-<div class="answer-section"><div class="answer-heading">4. Carbon Sequestration</div>
-<ul><li><span class="kw">Afforestation and Reforestation</span> — trees absorb CO₂</li><li><span class="kw">Soil Carbon Storage</span> — improved agricultural practices</li><li><span class="kw">Carbon Capture and Storage (CCS)</span> — industrial CO₂ stored underground</li></ul></div>
-<div class="answer-section"><div class="answer-heading">5. Sustainable Agriculture</div>
-<ul><li>Organic farming and reduced chemical fertilizers</li><li>Climate-resilient crop varieties</li><li><span class="kw">Agroforestry</span> practices</li><li>Reduces CH₄ and N₂O emissions from agriculture</li></ul></div>
-<div class="answer-section"><div class="answer-heading">6. Waste Management</div>
-<ul><li>Recycling and reuse of materials</li><li>Composting of organic waste</li><li><span class="kw">Methane capture from landfills</span></li></ul></div>
-<div class="answer-section"><div class="answer-heading">7. Lifestyle Changes</div>
-<ul><li>Reducing meat consumption</li><li>Conserving electricity and water</li><li>Reducing individual <span class="kw">carbon footprint</span></li></ul></div>
-<div class="answer-conclusion"><strong>Conclusion:</strong> <span class="kw">Climate Change Mitigation</span> requires a multi-pronged approach — from transitioning to renewable energy to changing individual behavior. These strategies collectively support the goals of the <span class="kw">Paris Agreement</span> and <span class="kw">SDG-13 (Climate Action)</span>.</div>`,
+// Q3 — Environmental Consequences
+{
+full:`<div class="intro-box"><span class="kw">Climate change</span> refers to long-term changes in global temperature and weather caused by <span class="kw">greenhouse gases</span> (CO₂, CH₄) from burning fossil fuels, deforestation, and industrialization. According to <span class="kw">IPCC</span>, it has serious impacts on the environment, ecosystems, and biodiversity.</div>
 
-  // Q7
-  `<div class="answer-title">Role of Renewable Energy in Climate Change Mitigation</div>
-<div class="answer-intro"><span class="kw">Renewable Energy</span> sources provide sustainable alternatives to fossil fuels, producing little or no GHG emissions. The <span class="kw">IPCC</span> states that increasing the share of renewable energy in global production can significantly reduce GHG emissions and slow climate change. These sources are naturally replenished and provide long-term energy security.</div>
-<div class="answer-section"><div class="answer-heading">1. Solar Energy</div>
-<strong>Working:</strong> <span class="kw">Solar panels</span> convert sunlight into electricity using photovoltaic cells.<br>
-<strong>Role in Mitigation:</strong>
-<ul><li>Produces electricity without GHG emissions</li><li>Reduces dependence on coal-based power plants</li><li>Suitable for residential, commercial, and industrial use</li><li>India promoting large-scale solar projects (<span class="kw">National Solar Mission</span>) to reduce carbon emissions</li></ul></div>
-<div class="answer-section"><div class="answer-heading">2. Wind Energy</div>
-<strong>Working:</strong> Wind rotates turbine blades connected to generators producing electricity.<br>
-<strong>Role in Mitigation:</strong>
-<ul><li>Produces <span class="kw">clean and renewable electricity</span></li><li>Requires no fuel — minimal pollution</li><li>Reduces carbon emissions from fossil fuel power plants</li><li>Wind farms installed in coastal and open areas</li></ul></div>
-<div class="answer-section"><div class="answer-heading">3. Hydropower</div>
-<strong>Working:</strong> Water stored in dams flows through turbines driving generators to produce electricity.<br>
-<strong>Role in Mitigation:</strong>
-<ul><li>Produces large amounts of <span class="kw">renewable electricity</span></li><li>Very low GHG emissions during operation</li><li>One of the oldest and most widely used renewable sources</li></ul></div>
-<div class="answer-section"><div class="answer-heading">4. Geothermal Energy</div>
-<strong>Working:</strong> Hot water/steam from underground reservoirs drive turbines to generate electricity.<br>
-<strong>Role in Mitigation:</strong>
-<ul><li>Provides stable, continuous energy supply</li><li>Very low GHG emissions</li><li>Useful in regions with <span class="kw">volcanic or tectonic activity</span></li></ul></div>
-<div class="answer-section"><div class="answer-heading">5. Biomass Energy</div>
-<strong>Working:</strong> Organic materials (agricultural waste, wood, manure) are burned or converted into biofuels.<br>
-<strong>Role in Mitigation:</strong>
-<ul><li>Converts waste materials into useful energy</li><li>Reduces landfill waste and <span class="kw">methane emissions</span></li><li>Considered <span class="kw">carbon-neutral</span> if biomass is sustainably managed</li></ul></div>
-<div class="answer-section"><div class="answer-heading">Advantages of Renewable Energy</div>
-<ul><li>Reduces GHG emissions and air pollution</li><li>Provides sustainable and clean energy</li><li>Creates employment opportunities</li><li>Enhances energy security and reduces fossil fuel dependence</li></ul></div>
-<div class="answer-conclusion"><strong>Conclusion:</strong> Renewable energy — <span class="kw">Solar, Wind, Hydropower, Geothermal, and Biomass</span> — forms the foundation of climate change mitigation. India's <span class="kw">National Solar Mission (NAPCC)</span> and global commitments under the <span class="kw">Paris Agreement</span> promote this transition toward a sustainable, low-carbon future.</div>`,
+<h3>1. Loss of Biodiversity</h3>
+<p style="color:#94a3b8;font-size:13px;margin-bottom:6px;"><span class="kw">Biodiversity</span> = variety of plants, animals, and microorganisms in ecosystems.</p>
+<ul>
+<li><strong>Causes:</strong> Rising temperatures, habitat destruction, changes in rainfall, ocean warming</li>
+<li><strong>Impacts:</strong> Species extinction, disruption of food chains, loss of ecological balance</li>
+<li><strong>Example:</strong> Melting Arctic ice threatens animals dependent on sea ice</li>
+</ul>
 
-  // Q8
-  `<div class="answer-title">Carbon Sequestration — Concept & Methods</div>
-<div class="answer-intro"><span class="kw">Carbon Sequestration</span> refers to the process of capturing and storing carbon dioxide (CO₂) from the atmosphere or emission sources to reduce its impact on <span class="kw">Global Warming</span>. The <span class="kw">IPCC</span> emphasizes its vital role in climate change mitigation. Carbon can be stored in forests, soil, oceans, and underground geological formations.</div>
-<div class="answer-section"><div class="answer-heading">Objectives of Carbon Sequestration</div>
-<ul><li>Reduce atmospheric <span class="kw">CO₂ concentration</span></li><li>Mitigate Global Warming and climate change</li><li>Improve environmental sustainability</li></ul></div>
-<div class="answer-section"><div class="answer-heading">1. Afforestation and Reforestation</div>
-<strong>Meaning:</strong>
-<ul><li><span class="kw">Afforestation:</span> Planting trees in areas where forests did NOT previously exist</li><li><span class="kw">Reforestation:</span> Replanting trees in areas where forests were destroyed</li></ul>
-Trees absorb CO₂ during <span class="kw">photosynthesis</span> and store carbon in biomass.<br><br>
-<strong>Role:</strong>
-<ul><li>Trees act as natural <span class="kw">carbon sinks</span></li><li>Forests store carbon in trunks, branches, roots, and soil</li><li>Reduces atmospheric CO₂ levels</li></ul>
-<strong>Benefits:</strong> Improves biodiversity, prevents soil erosion, enhances rainfall regulation.<br>
-India promotes large-scale tree plantation programs to increase forest cover.</div>
-<div class="answer-section"><div class="answer-heading">2. Soil Carbon Storage</div>
-<strong>Meaning:</strong> Storing carbon in <span class="kw">soil organic matter</span> through sustainable agricultural practices. Soils contain large amounts of organic carbon.<br><br>
-<strong>Methods:</strong>
-<ul><li><span class="kw">Crop rotation</span></li><li>Reduced tillage / <span class="kw">conservation tillage</span></li><li>Use of organic manure and compost</li><li><span class="kw">Cover cropping</span></li><li><span class="kw">Agroforestry</span></li></ul>
-<strong>Benefits:</strong> Improves soil fertility, water retention, agricultural productivity, and reduces atmospheric CO₂.</div>
-<div class="answer-section"><div class="answer-heading">3. Carbon Capture and Storage (CCS)</div>
-<strong>Meaning:</strong> A technological method to capture CO₂ from industrial sources and store it underground.<br><br>
-<strong>Steps:</strong>
-<ul><li><span class="kw">Capture:</span> CO₂ captured from power plants or industrial processes</li><li><span class="kw">Transport:</span> Transported via pipelines or ships</li><li><span class="kw">Storage:</span> Stored deep underground in geological formations — depleted oil/gas reservoirs or deep saline aquifers</li></ul>
-<strong>Advantages:</strong>
-<ul><li>Reduces industrial carbon emissions significantly</li><li>Prevents CO₂ from entering atmosphere</li><li>Supports cleaner energy production</li></ul></div>
-<div class="answer-conclusion"><strong>Conclusion:</strong> <span class="kw">Carbon Sequestration</span> through <span class="kw">Afforestation, Soil Carbon Storage, and CCS</span> plays a crucial role in reducing atmospheric CO₂. India's <span class="kw">Green India Mission (NAPCC)</span> and global climate frameworks under the <span class="kw">Paris Agreement</span> actively promote these strategies.</div>`,
+<h3>2. Coral Reef Bleaching</h3>
+<p style="color:#94a3b8;font-size:13px;margin-bottom:6px;"><span class="kw">Coral bleaching</span> = corals expel symbiotic algae due to rising ocean temperatures, turning white.</p>
+<ul>
+<li><strong>Causes:</strong> Rising ocean temperatures, ocean acidification, increased solar radiation</li>
+<li><strong>Effects:</strong> Death of coral reefs, loss of marine biodiversity, decline in fish populations</li>
+<li><strong>Example:</strong> Large-scale bleaching in the <span class="kw">Great Barrier Reef</span></li>
+</ul>
 
-  // Q9
-  `<div class="answer-title">Climate Change Adaptation — Definition & Major Strategies</div>
-<div class="answer-intro"><span class="kw">Climate Change</span> causes rising temperatures, changing rainfall, sea-level rise, and extreme weather events affecting all human and natural systems. <span class="kw">Climate Change Adaptation</span> refers to the adjustment of natural or human systems in response to actual or expected climate change to minimize damage and take advantage of beneficial opportunities. The <span class="kw">IPCC</span> emphasizes adaptation as essential for building climate resilience.</div>
-<div class="answer-section"><div class="answer-heading">Objectives of Adaptation</div>
-<ul><li>Reduce climate-related risks and vulnerabilities</li><li>Protect ecosystems and human communities</li><li>Improve resilience to climate impacts</li></ul></div>
-<div class="answer-section"><div class="answer-heading">1. Infrastructure Adaptation</div>
-Infrastructure (roads, bridges, buildings) is vulnerable to extreme weather.<br>
-<strong>Measures:</strong>
-<ul><li>Construction of <span class="kw">climate-resilient buildings</span></li><li><span class="kw">Flood-resistant infrastructure</span> design</li><li>Improved stormwater drainage systems</li><li>Heat-resistant urban infrastructure</li></ul>
-<strong>Benefits:</strong> Reduces damage from floods, storms, heatwaves; protects public safety.</div>
-<div class="answer-section"><div class="answer-heading">2. Water Resource Adaptation</div>
-Climate change affects rainfall patterns and water availability.<br>
-<strong>Measures:</strong>
-<ul><li><span class="kw">Rainwater harvesting</span> systems</li><li>Construction of reservoirs and water storage structures</li><li>Efficient irrigation — <span class="kw">drip irrigation</span></li><li>Protection and restoration of watersheds</li></ul>
-<strong>Benefits:</strong> Improves water availability during droughts; supports agriculture.</div>
-<div class="answer-section"><div class="answer-heading">3. Agricultural Adaptation</div>
-Agriculture is highly sensitive to temperature, rainfall, and soil moisture.<br>
-<strong>Measures:</strong>
-<ul><li>Development of <span class="kw">drought-resistant crop varieties</span></li><li><span class="kw">Crop diversification</span></li><li>Improved irrigation practices</li><li>Adoption of <span class="kw">Climate-Smart Agriculture</span></li></ul>
-<strong>Benefits:</strong> Reduces crop failure risk; ensures food security.</div>
-<div class="answer-section"><div class="answer-heading">4. Coastal Area Adaptation</div>
-Coastal regions face sea-level rise, coastal erosion, and storm surges.<br>
-<strong>Measures:</strong>
-<ul><li>Construction of <span class="kw">sea walls and coastal barriers</span></li><li>Restoration of <span class="kw">mangrove forests</span></li><li>Coastal zone management and land-use planning</li><li>Relocation of vulnerable communities</li></ul>
-<strong>Benefits:</strong> Protects coastal populations; preserves marine ecosystems.</div>
-<div class="answer-conclusion"><strong>Conclusion:</strong> <span class="kw">Climate Change Adaptation</span> across infrastructure, water, agriculture, and coastal areas is essential to build resilient communities. India's <span class="kw">NAPCC (National Action Plan on Climate Change)</span> provides a comprehensive framework for national adaptation in alignment with <span class="kw">SDG-13</span>.</div>`,
+<h3>3. Desertification</h3>
+<p style="color:#94a3b8;font-size:13px;margin-bottom:6px;"><span class="kw">Desertification</span> = process by which fertile land gradually becomes desert due to climate change and human activities.</p>
+<ul>
+<li><strong>Causes:</strong> Reduced rainfall, high temperatures, deforestation, poor land management</li>
+<li><strong>Effects:</strong> Loss of agricultural productivity, soil degradation, water scarcity, population migration</li>
+</ul>
 
-  // Q10
-  `<div class="answer-title">Paris Agreement & Kyoto Protocol — Objectives & Key Features</div>
-<div class="answer-intro">To combat the global climate crisis caused by rising GHG emissions, the international community has developed two landmark climate agreements — the <span class="kw">Kyoto Protocol (1997)</span> and the <span class="kw">Paris Agreement (2015)</span>. Both operate under the <span class="kw">UNFCCC (United Nations Framework Convention on Climate Change)</span> and aim to reduce GHG emissions and limit global warming.</div>
-<div class="answer-section"><div class="answer-heading">1. Kyoto Protocol</div>
-<strong>Definition:</strong> The <span class="kw">Kyoto Protocol</span> is an international treaty setting legally binding GHG emission reduction targets for developed countries. Adopted in <span class="kw">1997</span>, came into force in <span class="kw">2005</span>.<br><br>
-<strong>Objectives:</strong>
-<ul><li>Reduce GHG emissions in developed (Annex-I) countries</li><li>Control global warming and climate change</li><li>Promote sustainable development and international cooperation</li></ul>
-<strong>Key Features:</strong>
-<ul><li><span class="kw">Legally Binding Targets:</span> Developed countries reduce emissions ~5% below 1990 levels</li><li><span class="kw">Differentiated Responsibilities:</span> Developed nations bear greater responsibility for historical emissions</li><li><span class="kw">Emissions Trading:</span> Countries with surplus allowances can sell them</li><li><span class="kw">Clean Development Mechanism (CDM):</span> Developed countries invest in emission reduction projects in developing countries</li><li><span class="kw">Joint Implementation (JI):</span> Countries collaborate on emission reduction projects</li><li>Mandatory monitoring and reporting of GHG emissions</li></ul></div>
-<div class="answer-section"><div class="answer-heading">2. Paris Agreement</div>
-<strong>Definition:</strong> The <span class="kw">Paris Agreement</span> is a comprehensive global climate agreement adopted in <span class="kw">2015</span> to strengthen international efforts to combat climate change.<br><br>
-<strong>Objectives:</strong>
-<ul><li>Limit global temperature increase to <span class="kw">well below 2°C</span> above pre-industrial levels</li><li>Aim to limit warming to <span class="kw">1.5°C</span> if possible</li><li>Reduce global GHG emissions and achieve <span class="kw">net-zero</span> by second half of century</li></ul>
-<strong>Key Features:</strong>
-<ul><li><span class="kw">NDCs (Nationally Determined Contributions):</span> Each country sets own targets, updated every 5 years</li><li><span class="kw">Global Cooperation:</span> All countries — developed AND developing — participate</li><li><span class="kw">Climate Finance:</span> Developed countries provide financial support to developing nations</li><li><span class="kw">Transparency and Monitoring:</span> Regular progress reporting and accountability</li><li><span class="kw">Long-Term Goal:</span> Net-zero GHG emissions by second half of this century</li></ul></div>
-<div class="answer-section"><div class="answer-heading">Comparison</div>
-<table class="answer-table"><tr><th>Aspect</th><th>Kyoto Protocol</th><th>Paris Agreement</th></tr>
-<tr><td>Year</td><td>1997 (force: 2005)</td><td>2015</td></tr>
-<tr><td>Binding</td><td>Legally binding (developed)</td><td>Voluntary NDCs (all countries)</td></tr>
-<tr><td>Coverage</td><td>Developed countries only</td><td>All countries globally</td></tr>
-<tr><td>Target</td><td>5% below 1990 levels</td><td>Below 2°C / 1.5°C</td></tr></table></div>
-<div class="answer-conclusion"><strong>Conclusion:</strong> Both the <span class="kw">Kyoto Protocol</span> and <span class="kw">Paris Agreement</span> are pillars of global climate governance. India actively participates in both, contributing to <span class="kw">SDG-13 (Climate Action)</span> through its national commitments and <span class="kw">NAPCC</span> implementation.</div>`,
+<h3>4. Forest Fires</h3>
+<p style="color:#94a3b8;font-size:13px;margin-bottom:6px;"><span class="kw">Forest fires</span> are uncontrolled fires spreading through forests/grasslands. Climate change increases their frequency.</p>
+<ul>
+<li><strong>Causes:</strong> High temperatures, dry vegetation, low rainfall, lightning or human activities</li>
+<li><strong>Effects:</strong> Destruction of habitats, air pollution, loss of biodiversity, increased CO₂ emissions</li>
+<li>Forest fires release large amounts of <span class="kw">CO₂</span>, further intensifying global warming</li>
+</ul>
 
-  // Q11
-  `<div class="answer-title">NAPCC — Objectives, Key Components & Eight National Missions</div>
-<div class="answer-intro">The <span class="kw">National Action Plan on Climate Change (NAPCC)</span> was launched by the Government of India in <span class="kw">2008</span> to address climate change through sustainable development and environmental protection. It is India's comprehensive framework to reduce GHG emissions while promoting economic growth.</div>
-<div class="answer-section"><div class="answer-heading">Objectives of NAPCC</div>
-<ul><li>Promote sustainable development while addressing climate change</li><li>Reduce GHG emissions and increase renewable energy use</li><li>Improve energy efficiency in industries and buildings</li><li>Protect natural ecosystems and biodiversity</li><li>Enhance climate change adaptation capacity</li><li>Encourage research and technological innovation</li></ul></div>
-<div class="answer-section"><div class="answer-heading">Key Components</div>
-<ul><li><span class="kw">Sustainable Development</span> — economic growth without harming environment</li><li><span class="kw">Climate Change Mitigation</span> — reducing GHG through renewables and efficiency</li><li><span class="kw">Climate Change Adaptation</span> — coping with droughts, floods, extreme events</li><li><span class="kw">Technological Innovation</span> — clean energy R&D</li><li><span class="kw">Public Awareness</span> — education and capacity building</li></ul></div>
-<div class="answer-section"><div class="answer-heading">Eight National Missions of NAPCC</div>
-<table class="answer-table"><tr><th>Mission</th><th>Focus</th></tr>
-<tr><td><span class="kw">1. National Solar Mission</span></td><td>Increase solar power generation; reduce fossil fuel dependence; promote solar panels & solar thermal</td></tr>
-<tr><td><span class="kw">2. Enhanced Energy Efficiency</span></td><td>Energy-efficient technologies; energy-saving standards; market-based mechanisms</td></tr>
-<tr><td><span class="kw">3. Sustainable Habitat</span></td><td>Energy-efficient buildings; improved urban planning; better waste management; public transport</td></tr>
-<tr><td><span class="kw">4. National Water Mission</span></td><td>Improve water-use efficiency; promote conservation; reduce water wastage; integrated management</td></tr>
-<tr><td><span class="kw">5. Himalayan Ecosystem</span></td><td>Protect glaciers and mountain ecosystems; study climate change impacts on Himalayas</td></tr>
-<tr><td><span class="kw">6. Green India Mission</span></td><td>Afforestation & reforestation; restoration of degraded forests; enhance biodiversity & carbon sequestration</td></tr>
-<tr><td><span class="kw">7. Sustainable Agriculture</span></td><td>Drought-resistant crop varieties; efficient irrigation; improved soil management; weather-based crop insurance</td></tr>
-<tr><td><span class="kw">8. Strategic Knowledge</span></td><td>Climate research and data collection; development of climate models; training and capacity building</td></tr></table></div>
-<div class="answer-conclusion"><strong>Conclusion:</strong> India's <span class="kw">NAPCC</span> with its <span class="kw">Eight National Missions</span> provides a holistic, multi-sector approach to climate action. It directly supports <span class="kw">SDG-13 (Climate Action)</span> and aligns with India's commitments under the <span class="kw">Paris Agreement</span>, reinforcing sustainable development while building climate resilience.</div>`,
+<div class="concl-box">Climate change causes severe environmental consequences — <span class="kw">biodiversity loss</span>, <span class="kw">coral bleaching</span>, <span class="kw">desertification</span>, and <span class="kw">forest fires</span> — all threatening ecosystems and human well-being. Urgent mitigation and adaptation strategies are essential.</div>`,
 
-  // Q12
-  `<div class="answer-title">Carbon Tax, Carbon Trading & Cap-and-Trade Mechanisms</div>
-<div class="answer-intro">To combat climate change, governments have introduced economic and policy mechanisms to reduce GHG emissions. <span class="kw">Carbon Tax, Carbon Trading, and Cap-and-Trade</span> are important tools in climate change mitigation policy. These economic instruments encourage industries to reduce carbon emissions while promoting cleaner technologies.</div>
-<div class="answer-section"><div class="answer-heading">1. Carbon Tax</div>
-<strong>Definition:</strong> A <span class="kw">Carbon Tax</span> is a tax imposed on fossil fuels based on the amount of CO₂ emissions they produce. Governments charge companies/individuals a fixed price per unit of CO₂ emitted.<br><br>
-<strong>Working Principle:</strong>
-<ul><li>Fossil fuels produce CO₂ when burned</li><li>Tax is applied based on <span class="kw">carbon content</span> of fuels</li><li>Higher emissions → Higher taxes</li></ul>
-<strong>Advantages:</strong>
-<ul><li>Encourages industries to reduce emissions</li><li>Promotes use of <span class="kw">renewable energy</span></li><li>Provides government revenue for environmental programs</li><li>Simple and transparent policy mechanism</li></ul>
-<strong>Example:</strong> Sweden has successfully implemented carbon tax to reduce GHG emissions.</div>
-<div class="answer-section"><div class="answer-heading">2. Carbon Trading</div>
-<strong>Definition:</strong> <span class="kw">Carbon Trading</span> is a market-based system where companies/countries buy and sell carbon emission <span class="kw">allowances or credits</span>.<br><br>
-<strong>Working Principle:</strong>
-<ul><li>Governments set emission limits for industries</li><li>Companies receive <span class="kw">emission permits/allowances</span></li><li>Companies emitting LESS carbon can sell unused permits</li><li>Companies exceeding limits must buy additional permits</li></ul>
-<strong>Benefits:</strong> Encourages cost-effective emission reduction; supports investment in clean technologies.<br>
-Introduced under the <span class="kw">Kyoto Protocol</span> as a flexible mechanism.</div>
-<div class="answer-section"><div class="answer-heading">3. Cap-and-Trade Mechanism</div>
-<strong>Definition:</strong> <span class="kw">Cap-and-Trade</span> is a regulatory system where government sets a maximum limit (CAP) on total GHG emissions. Emission permits are issued and can be traded.<br><br>
-<strong>Working Process:</strong>
-<ul><li>Government sets overall <span class="kw">emission cap</span></li><li>Emission permits distributed to industries</li><li>Companies must hold permits equal to their emissions</li><li>Surplus permits can be SOLD; exceeding limits requires buying MORE permits</li></ul>
-<strong>Advantages:</strong>
-<ul><li>Provides flexibility for industries</li><li>Encourages technological innovation</li><li>Ensures overall emissions remain within the limit</li></ul></div>
-<div class="answer-section"><div class="answer-heading">Role in Climate Change Mitigation</div>
-<ul><li>Reduce GHG emissions cost-effectively</li><li>Encourage energy efficiency and renewable energy use</li><li>Support investment in <span class="kw">low-carbon technologies</span></li><li>Provide economic incentives for environmental protection</li></ul></div>
-<div class="answer-conclusion"><strong>Conclusion:</strong> <span class="kw">Carbon Tax, Carbon Trading, and Cap-and-Trade</span> are complementary economic tools that incentivize emission reductions while giving industries flexibility. These mechanisms align with the <span class="kw">Kyoto Protocol's</span> market mechanisms and support <span class="kw">SDG-13 (Climate Action)</span> by making climate-friendly choices economically rational.</div>`
+concise:`<div class="intro-box"><span class="kw">Climate change</span> → major environmental consequences as per <span class="kw">IPCC</span>.</div>
+<h3>1. Biodiversity Loss</h3>
+<ul><li>Rising temps + habitat loss → species extinction, food chain disruption. (Arctic animals threatened)</li></ul>
+<h3>2. Coral Bleaching</h3>
+<ul><li>Ocean warming → corals expel algae → turn white → reef death. (<span class="kw">Great Barrier Reef</span> affected)</li></ul>
+<h3>3. Desertification</h3>
+<ul><li>Reduced rain + high temps → fertile land → desert; soil degradation, water scarcity, migration</li></ul>
+<h3>4. Forest Fires</h3>
+<ul><li>High temps + dry vegetation → uncontrolled fires → CO₂ release → worsens global warming</li></ul>
+<div class="concl-box">All four consequences threaten ecosystems — urgent <span class="kw">mitigation</span> needed.</div>`
+},
+
+// Q4 — Water Resources
+{
+full:`<div class="intro-box"><span class="kw">Water resources</span> are essential for survival, agriculture, and ecosystems. <span class="kw">Climate change</span> significantly affects availability and distribution of water through rising temperatures and changing rainfall. <span class="kw">IPCC</span> states climate change is altering the global water cycle and increasing extreme water events.</div>
+
+<h3>1. Glacier Melting</h3>
+<p style="color:#94a3b8;font-size:13px;margin-bottom:6px;"><span class="kw">Glaciers</span> = large masses of ice storing freshwater in mountains and polar regions. Rising temperatures accelerate melting.</p>
+<ul>
+<li><strong>Causes:</strong> Increase in global temperatures, reduced snowfall, increased solar radiation</li>
+<li><strong>Impacts:</strong> Reduced long-term water supply, rising sea levels, glacial lake flood risk</li>
+<li><strong>Example:</strong> <span class="kw">Himalayan glaciers</span> melting threatens water supply for millions</li>
+</ul>
+
+<h3>2. Groundwater Depletion</h3>
+<p style="color:#94a3b8;font-size:13px;margin-bottom:6px;"><span class="kw">Groundwater</span> = water stored below Earth's surface in aquifers. Climate change reduces groundwater recharge.</p>
+<ul>
+<li><strong>Causes:</strong> Reduced rainfall, increased evaporation, over-extraction for agriculture</li>
+<li><strong>Impacts:</strong> Declining groundwater levels, drying of wells, water shortages for drinking and farming</li>
+</ul>
+
+<h3>3. Floods</h3>
+<p style="color:#94a3b8;font-size:13px;margin-bottom:6px;"><span class="kw">Floods</span> occur when excessive rainfall or river overflow spreads water over land. Climate change intensifies rainfall events.</p>
+<ul>
+<li><strong>Causes:</strong> Heavy rainfall (warmer atmosphere holds more moisture), rapid glacier melt, storm surges</li>
+<li><strong>Impacts:</strong> Infrastructure damage, loss of life, soil erosion, contamination of drinking water</li>
+</ul>
+
+<h3>4. Droughts</h3>
+<p style="color:#94a3b8;font-size:13px;margin-bottom:6px;"><span class="kw">Drought</span> = prolonged period of low rainfall causing water shortages. Climate change increases drought frequency.</p>
+<ul>
+<li><strong>Causes:</strong> Irregular monsoon patterns, increased evaporation, reduced groundwater recharge</li>
+<li><strong>Impacts:</strong> Crop failure, food shortages, drinking water scarcity, land degradation, population migration</li>
+</ul>
+
+<div class="concl-box"><span class="kw">Climate change</span> severely disrupts water resources through glacier melt, groundwater depletion, increased floods, and prolonged droughts. Sustainable <span class="kw">water resource management</span> and adaptation strategies are urgently needed.</div>`,
+
+concise:`<div class="intro-box"><span class="kw">Climate change</span> alters the global water cycle — <span class="kw">IPCC</span> warns of increasing extreme water events.</div>
+<h3>Four Key Impacts</h3>
+<ul>
+<li><span class="kw">Glacier Melting</span>: Rising temps → fast melt → reduced water supply, sea rise. (Himalayan glaciers)</li>
+<li><span class="kw">Groundwater Depletion</span>: Less rainfall + more evaporation → declining aquifers, dry wells</li>
+<li><span class="kw">Floods</span>: Warmer air holds more moisture → intense rainfall → infrastructure damage, water contamination</li>
+<li><span class="kw">Droughts</span>: Irregular monsoons + high evaporation → crop failure, water scarcity, migration</li>
+</ul>
+<div class="concl-box">Sustainable <span class="kw">water management</span> and adaptation strategies are essential to address these impacts.</div>`
+},
+
+// Q5 — Agriculture
+{
+full:`<div class="intro-box"><span class="kw">Agriculture</span> depends on temperature, rainfall, humidity, and seasonal cycles. <span class="kw">Climate change</span> = long-term changes in weather from increased greenhouse gases. <span class="kw">IPCC</span> identifies it as a major threat to global food production. Major problems: <span class="kw">crop failure</span>, <span class="kw">pest spread</span>, and <span class="kw">food insecurity</span>.</div>
+
+<h3>Effects of Climate Change on Agriculture</h3>
+<ul>
+<li><span class="kw">Rising Temperatures:</span> Reduce crop growth, shorten growing season, cause heat stress in plants, increase soil moisture evaporation</li>
+<li><span class="kw">Irregular Rainfall:</span> Water shortages during crop stages, flooding in farmlands, soil erosion</li>
+<li><span class="kw">Extreme Events:</span> Floods, droughts, storms damage crops and farm infrastructure</li>
+</ul>
+
+<h3>1. Crop Failure</h3>
+<p style="color:#94a3b8;font-size:13px;margin-bottom:6px;"><span class="kw">Crop failure</span> = crops destroyed or unable to grow due to unfavourable environmental conditions.</p>
+<ul>
+<li><strong>Causes:</strong> Heat stress, drought, waterlogging, soil degradation</li>
+<li><strong>Effects:</strong> Loss of farm income, reduced food production, economic losses</li>
+<li>Common in regions dependent on <span class="kw">seasonal rainfall</span></li>
+</ul>
+
+<h3>2. Spread of Pests & Diseases</h3>
+<p style="color:#94a3b8;font-size:13px;margin-bottom:6px;">Climate change creates favourable conditions for pests, insects, and plant diseases.</p>
+<ul>
+<li><strong>Causes:</strong> Warmer temps increase pest reproduction; humidity encourages fungal diseases; longer seasons allow pests to survive longer</li>
+<li><strong>Effects:</strong> Crop damage, increased pesticide use, reduced agricultural productivity</li>
+<li><strong>Example:</strong> Warmer winters allow pests to survive and damage crops next season</li>
+</ul>
+
+<h3>3. Food Insecurity</h3>
+<p style="color:#94a3b8;font-size:13px;margin-bottom:6px;"><span class="kw">Food insecurity</span> = people lack reliable access to sufficient, safe, nutritious food.</p>
+<ul>
+<li><strong>Causes:</strong> Reduced crop yields, crop failures from extreme weather, rising food prices</li>
+<li><strong>Effects:</strong> Malnutrition and hunger, rural poverty, social and economic instability</li>
+<li>Especially severe in <span class="kw">developing countries</span> where agriculture = primary livelihood</li>
+</ul>
+
+<div class="concl-box"><span class="kw">Climate change</span> threatens global food systems through crop failure, pest invasions, and food insecurity. <span class="kw">Climate-smart agriculture</span>, drought-resistant varieties, and efficient irrigation are key solutions.</div>`,
+
+concise:`<div class="intro-box"><span class="kw">Climate change</span> threatens agriculture — <span class="kw">IPCC</span> identifies it as a major risk to global food production.</div>
+<h3>Climate Impacts on Agriculture</h3>
+<ul>
+<li>Rising temps → heat stress, shorter growing season</li>
+<li>Irregular rainfall → water shortage or flooding in farms</li>
+<li>Extreme events → crop and infrastructure damage</li>
+</ul>
+<h3>Three Main Problems</h3>
+<ul>
+<li><span class="kw">Crop Failure</span>: Heat, drought, flooding → loss of income, reduced food production</li>
+<li><span class="kw">Pest Spread</span>: Warmer temps → faster pest reproduction → more crop damage, more pesticides</li>
+<li><span class="kw">Food Insecurity</span>: Less yield + higher prices → malnutrition, poverty (worst in developing countries)</li>
+</ul>
+<div class="concl-box"><span class="kw">Climate-smart agriculture</span> and drought-resistant crops are essential solutions.</div>`
+},
+
+// Q6 — Mitigation
+{
+full:`<div class="intro-box"><span class="kw">Climate change mitigation</span> refers to actions and strategies implemented to reduce or prevent <span class="kw">greenhouse gas emissions</span> and limit global warming. <span class="kw">IPCC</span> emphasizes that mitigation strategies are essential to limit warming and protect the environment.</div>
+
+<p style="margin:4px 0 8px;color:#94a3b8;font-size:13px;">Mitigation aims to: reduce GHGs released, increase <span class="kw">carbon sinks</span>, and promote sustainable energy use.</p>
+
+<h3>1. Transition to Renewable Energy</h3>
+<ul>
+<li>Clean alternatives: <span class="kw">solar, wind, hydropower, geothermal, biomass</span></li>
+<li>Reduces CO₂ emissions, decreases dependence on fossil fuels</li>
+</ul>
+
+<h3>2. Energy Efficiency</h3>
+<ul>
+<li>Using less energy for the same task</li>
+<li>Measures: <span class="kw">LED lighting, energy-efficient appliances, smart electricity grids, green buildings</span></li>
+<li>Reduces energy consumption and GHG emissions</li>
+</ul>
+
+<h3>3. Sustainable Transportation</h3>
+<ul>
+<li><span class="kw">Electric vehicles</span>, public transportation systems, cycling infrastructure, <span class="kw">biofuels</span></li>
+<li>Reduces emissions from vehicles and fuel consumption</li>
+</ul>
+
+<h3>4. Carbon Sequestration</h3>
+<ul>
+<li><span class="kw">Afforestation & Reforestation</span> — trees absorb CO₂ through photosynthesis</li>
+<li><span class="kw">Soil Carbon Storage</span> — improved agricultural practices store carbon in soil</li>
+<li><span class="kw">Carbon Capture and Storage (CCS)</span> — industrial tech captures and stores CO₂ underground</li>
+</ul>
+
+<h3>5. Sustainable Agriculture</h3>
+<ul>
+<li><span class="kw">Organic farming</span>, reduced chemical fertilizers, <span class="kw">agroforestry</span>, climate-resilient crops</li>
+<li>Reduces CH₄ and N₂O emissions from agriculture</li>
+</ul>
+
+<h3>6. Waste Management</h3>
+<ul>
+<li>Recycling, composting, <span class="kw">methane capture from landfills</span></li>
+<li>Reduces GHG emissions from improper waste disposal</li>
+</ul>
+
+<h3>7. Lifestyle Changes</h3>
+<ul>
+<li>Reducing meat consumption, conserving electricity and water, using public transport</li>
+<li>Reduces overall <span class="kw">carbon footprint</span></li>
+</ul>
+
+<div class="concl-box"><span class="kw">Climate change mitigation</span> requires a combination of renewable energy, efficiency measures, carbon sequestration, and sustainable practices. Every sector must contribute to reduce <span class="kw">greenhouse gas emissions</span> and limit global warming.</div>`,
+
+concise:`<div class="intro-box"><span class="kw">Climate change mitigation</span> = actions to reduce/prevent <span class="kw">greenhouse gas emissions</span> and limit global warming (<span class="kw">IPCC</span>).</div>
+<h3>7 Major Strategies</h3>
+<ul>
+<li><span class="kw">Renewable Energy</span>: Solar, wind, hydro, geothermal, biomass → reduces CO₂</li>
+<li><span class="kw">Energy Efficiency</span>: LEDs, smart grids, efficient appliances, green buildings</li>
+<li><span class="kw">Sustainable Transport</span>: EVs, public transit, cycling, biofuels</li>
+<li><span class="kw">Carbon Sequestration</span>: Afforestation, soil carbon, CCS technology</li>
+<li><span class="kw">Sustainable Agriculture</span>: Organic farming, agroforestry, reduced fertilizers</li>
+<li><span class="kw">Waste Management</span>: Recycling, composting, methane capture from landfills</li>
+<li><span class="kw">Lifestyle Changes</span>: Less meat, conserve electricity, use public transport</li>
+</ul>
+<div class="concl-box">All sectors must act together to cut <span class="kw">greenhouse gas emissions</span>.</div>`
+},
+
+// Q7 — Renewable Energy
+{
+full:`<div class="intro-box"><span class="kw">Climate change</span> is mainly caused by burning <span class="kw">fossil fuels</span> (coal, oil, gas), increasing CO₂. <span class="kw">Renewable energy</span> provides sustainable alternatives producing little or no greenhouse gas emissions. <span class="kw">IPCC</span> states increasing renewable energy share can significantly reduce GHG emissions and slow climate change.</div>
+
+<p style="margin:4px 0 8px;color:#94a3b8;font-size:13px;">Renewable energy helps by: reducing fossil fuel dependence, lowering CO₂ emissions, reducing air pollution, ensuring long-term energy security.</p>
+
+<h3>1. Solar Energy</h3>
+<ul>
+<li>Obtained from sunlight using <span class="kw">solar panels (photovoltaic cells)</span> and solar thermal systems</li>
+<li>Produces electricity without GHG emissions</li>
+<li>Suitable for residential, commercial, industrial use</li>
+<li><strong>India</strong> promotes large-scale solar projects to reduce carbon emissions</li>
+</ul>
+
+<h3>2. Wind Energy</h3>
+<ul>
+<li>Kinetic energy of wind → electricity via <span class="kw">wind turbines</span></li>
+<li>Produces clean renewable electricity; requires no fuel; minimal pollution</li>
+<li>Wind farms installed in coastal and open areas with strong winds</li>
+</ul>
+
+<h3>3. Hydropower</h3>
+<ul>
+<li>Flowing/falling water through <span class="kw">turbines</span> drives generators → electricity</li>
+<li>Produces large amounts of renewable electricity; low GHG during operation</li>
+<li>One of the oldest and most widely used renewable sources</li>
+</ul>
+
+<h3>4. Geothermal Energy</h3>
+<ul>
+<li>Derived from <span class="kw">heat stored inside Earth</span>; hot water/steam from underground reservoirs drives turbines</li>
+<li>Stable and continuous energy supply; very low GHG emissions</li>
+<li>Useful in regions with <span class="kw">volcanic or tectonic activity</span></li>
+</ul>
+
+<h3>5. Biomass Energy</h3>
+<ul>
+<li>From organic materials: agricultural waste, wood, animal manure</li>
+<li>Burned or converted to <span class="kw">biofuels</span> for heat and electricity</li>
+<li>Considered <span class="kw">carbon-neutral</span> if sustainably managed; reduces landfill waste</li>
+</ul>
+
+<h3>Advantages of Renewable Energy</h3>
+<ul>
+<li>Reduces GHG emissions; provides clean, sustainable energy</li>
+<li>Decreases air pollution; creates employment; enhances energy security</li>
+</ul>
+
+<div class="concl-box"><span class="kw">Renewable energy</span> — solar, wind, hydropower, geothermal, and biomass — is the cornerstone of <span class="kw">climate change mitigation</span>. Transitioning away from fossil fuels is critical to achieving global climate targets.</div>`,
+
+concise:`<div class="intro-box"><span class="kw">Renewable energy</span> = sustainable alternative to fossil fuels; little/no GHG. <span class="kw">IPCC</span>: key strategy for climate change mitigation.</div>
+<h3>Five Renewable Sources</h3>
+<ul>
+<li><span class="kw">Solar</span>: Sunlight → photovoltaic cells → electricity; no GHG; India's major initiative</li>
+<li><span class="kw">Wind</span>: Wind → turbine blades → electricity; clean, no fuel needed</li>
+<li><span class="kw">Hydropower</span>: Flowing water → turbines → electricity; oldest renewable; low GHG</li>
+<li><span class="kw">Geothermal</span>: Earth's internal heat → steam → electricity; continuous, very low emissions</li>
+<li><span class="kw">Biomass</span>: Organic waste → biofuels; carbon-neutral if sustainably managed</li>
+</ul>
+<div class="concl-box">Transition to renewables = essential to reduce fossil fuel dependence and achieve <span class="kw">climate targets</span>.</div>`
+},
+
+// Q8 — Carbon Sequestration
+{
+full:`<div class="intro-box"><span class="kw">Carbon sequestration</span> is the process of capturing and storing carbon dioxide from the atmosphere or emission sources to prevent it from contributing to global warming. <span class="kw">IPCC</span> emphasizes carbon sequestration as an important climate change mitigation strategy. Carbon can be stored in forests, soil, oceans, and underground geological formations.</div>
+
+<p style="margin:4px 0 8px;color:#94a3b8;font-size:13px;"><strong>Objectives:</strong> Reduce atmospheric CO₂ concentration, mitigate global warming, improve environmental sustainability.</p>
+
+<h3>1. Afforestation and Reforestation</h3>
+<p style="color:#94a3b8;font-size:13px;margin-bottom:6px;"><span class="kw">Afforestation</span> = planting trees where forests didn't exist. <span class="kw">Reforestation</span> = replanting where forests were destroyed.</p>
+<ul>
+<li>Trees absorb CO₂ during <span class="kw">photosynthesis</span> and store carbon in biomass</li>
+<li>Forests store carbon in trunks, branches, roots, and soil</li>
+<li>Benefits: improves biodiversity, prevents soil erosion, enhances rainfall regulation</li>
+<li><strong>India</strong> promotes large-scale tree plantation programs to increase forest cover</li>
+</ul>
+
+<h3>2. Soil Carbon Storage</h3>
+<p style="color:#94a3b8;font-size:13px;margin-bottom:6px;">Storing carbon in <span class="kw">soil organic matter</span> through sustainable agricultural practices.</p>
+<ul>
+<li>Methods: <span class="kw">Crop rotation</span>, reduced/conservation tillage, organic manure, cover cropping, agroforestry</li>
+<li>Benefits: improves soil fertility, increases water retention, enhances agricultural productivity</li>
+<li>Soils contain large amounts of organic carbon that reduce atmospheric CO₂</li>
+</ul>
+
+<h3>3. Carbon Capture and Storage (CCS)</h3>
+<p style="color:#94a3b8;font-size:13px;margin-bottom:6px;">Technological method to capture CO₂ from industrial sources and store underground.</p>
+<ul>
+<li><strong>Step 1 — Capture:</strong> CO₂ captured from power plants/industries</li>
+<li><strong>Step 2 — Transport:</strong> Through pipelines or ships</li>
+<li><strong>Step 3 — Storage:</strong> Deep underground in <span class="kw">geological formations</span> (depleted oil/gas reservoirs, deep saline aquifers)</li>
+<li><strong>Advantages:</strong> Reduces industrial emissions; prevents CO₂ from entering atmosphere; supports cleaner energy</li>
+</ul>
+
+<h3>Importance of Carbon Sequestration</h3>
+<ul>
+<li>Mitigates climate change; reduces GHG concentrations</li>
+<li>Protects ecosystems and biodiversity; supports sustainable environmental management</li>
+</ul>
+
+<div class="concl-box"><span class="kw">Carbon sequestration</span> through afforestation, soil carbon storage, and <span class="kw">CCS technology</span> plays a vital role in reducing atmospheric CO₂ and combating climate change alongside emission reduction strategies.</div>`,
+
+concise:`<div class="intro-box"><span class="kw">Carbon sequestration</span> = capturing and storing CO₂ to prevent global warming. Three main methods:</div>
+<h3>Three Methods</h3>
+<ul>
+<li><span class="kw">Afforestation/Reforestation</span>: Trees absorb CO₂ via photosynthesis → stored in biomass & soil. Benefits: biodiversity, soil erosion prevention.</li>
+<li><span class="kw">Soil Carbon Storage</span>: Crop rotation, reduced tillage, organic manure, cover cropping → stores carbon in soil organic matter.</li>
+<li><span class="kw">CCS (Carbon Capture & Storage)</span>: Capture CO₂ from industries → transport via pipelines → store underground in geological formations.</li>
+</ul>
+<div class="concl-box">All three methods complement each other to reduce atmospheric <span class="kw">CO₂</span> and mitigate climate change.</div>`
+},
+
+// Q9 — Adaptation
+{
+full:`<div class="intro-box"><span class="kw">Climate change adaptation</span> refers to the adjustment of natural or human systems in response to actual or expected climate change in order to minimize damage and take advantage of beneficial opportunities. <span class="kw">IPCC</span> states adaptation strategies help reduce vulnerability and increase community resilience to climate-related risks.</div>
+
+<p style="margin:4px 0 8px;color:#94a3b8;font-size:13px;"><strong>Objectives:</strong> Reduce climate-related risks; protect ecosystems and communities; improve resilience.</p>
+
+<h3>1. Infrastructure Adaptation</h3>
+<p style="color:#94a3b8;font-size:13px;margin-bottom:6px;">Roads, bridges, buildings, and transport systems are vulnerable to extreme weather.</p>
+<ul>
+<li>Construction of <span class="kw">climate-resilient buildings</span></li>
+<li>Development of <span class="kw">flood-resistant infrastructure</span></li>
+<li>Improved stormwater drainage systems</li>
+<li>Heat-resistant urban infrastructure</li>
+<li><strong>Benefits:</strong> Reduces flood/storm/heatwave damage; improves community safety</li>
+</ul>
+
+<h3>2. Water Resource Adaptation</h3>
+<p style="color:#94a3b8;font-size:13px;margin-bottom:6px;">Climate change affects rainfall patterns and water availability.</p>
+<ul>
+<li><span class="kw">Rainwater harvesting</span> systems</li>
+<li>Construction of reservoirs and water storage structures</li>
+<li>Efficient irrigation methods — <span class="kw">drip irrigation</span></li>
+<li>Protection and restoration of <span class="kw">watersheds</span></li>
+<li><strong>Benefits:</strong> Improves water availability during droughts; reduces water scarcity</li>
+</ul>
+
+<h3>3. Agricultural Adaptation</h3>
+<p style="color:#94a3b8;font-size:13px;margin-bottom:6px;">Agriculture is highly sensitive to climate conditions.</p>
+<ul>
+<li>Development of <span class="kw">drought-resistant crop varieties</span></li>
+<li><span class="kw">Crop diversification</span> and improved irrigation</li>
+<li>Adoption of <span class="kw">climate-smart agriculture</span></li>
+<li><strong>Benefits:</strong> Reduces crop failure risk; improves productivity; ensures food security</li>
+</ul>
+
+<h3>4. Coastal Area Adaptation</h3>
+<p style="color:#94a3b8;font-size:13px;margin-bottom:6px;">Coastal regions face sea-level rise, coastal erosion, and storm surges.</p>
+<ul>
+<li>Construction of <span class="kw">sea walls and coastal barriers</span></li>
+<li>Restoration of <span class="kw">mangrove forests</span></li>
+<li><span class="kw">Coastal zone management</span> and land-use planning</li>
+<li>Relocation of vulnerable communities</li>
+<li><strong>Benefits:</strong> Protects coastal populations; prevents flooding; preserves marine ecosystems</li>
+</ul>
+
+<div class="concl-box"><span class="kw">Climate change adaptation</span> across infrastructure, water, agriculture, and coastal sectors is essential to reduce vulnerability, protect ecosystems, ensure sustainable development, and improve community resilience.</div>`,
+
+concise:`<div class="intro-box"><span class="kw">Climate change adaptation</span> = adjusting human/natural systems to minimize climate damage. <span class="kw">IPCC</span>: reduces vulnerability, builds resilience.</div>
+<h3>Four Adaptation Areas</h3>
+<ul>
+<li><span class="kw">Infrastructure</span>: Climate-resilient buildings, flood-resistant structures, better drainage systems</li>
+<li><span class="kw">Water Resources</span>: Rainwater harvesting, reservoirs, drip irrigation, watershed restoration</li>
+<li><span class="kw">Agriculture</span>: Drought-resistant crops, crop diversification, climate-smart farming</li>
+<li><span class="kw">Coastal Areas</span>: Sea walls, mangrove restoration, coastal zone management, community relocation</li>
+</ul>
+<div class="concl-box">Adaptation reduces <span class="kw">climate vulnerability</span> and ensures sustainable development for communities.</div>`
+},
+
+// Q10 — Paris Agreement & Kyoto Protocol
+{
+full:`<div class="intro-box">To address the global challenge of <span class="kw">climate change</span>, countries developed international agreements to reduce <span class="kw">greenhouse gas emissions</span> and limit global warming. Two major agreements: the <span class="kw">Kyoto Protocol</span> and the <span class="kw">Paris Agreement</span>.</div>
+
+<h3>Kyoto Protocol</h3>
+<p style="color:#94a3b8;font-size:13px;margin-bottom:6px;"><strong>Definition:</strong> International treaty setting <span class="kw">legally binding emission targets</span> for developed countries. Adopted <span class="kw">1997</span>, in force <span class="kw">2005</span>, under <span class="kw">UNFCCC</span>.</p>
+<p style="color:#94a3b8;font-size:13px;margin-bottom:6px;"><strong>Objectives:</strong> Reduce GHG emissions in developed countries; control global warming; promote sustainable development; encourage international cooperation.</p>
+<ul>
+<li><span class="kw">Legally Binding Targets:</span> Developed countries reduce emissions ~5% below 1990 levels</li>
+<li><span class="kw">Differentiated Responsibilities:</span> Developed countries bear greater responsibility for historical emissions</li>
+<li><span class="kw">Market-Based Mechanisms:</span>
+  <ul>
+  <li><span class="kw">Emissions Trading</span> — buy/sell excess allowances</li>
+  <li><span class="kw">Clean Development Mechanism (CDM)</span> — developed nations invest in reduction projects in developing countries</li>
+  <li><span class="kw">Joint Implementation (JI)</span> — countries collaborate on projects</li>
+  </ul>
+</li>
+<li><span class="kw">Monitoring & Reporting:</span> Regular reporting of GHG emissions required</li>
+</ul>
+
+<h3>Paris Agreement</h3>
+<p style="color:#94a3b8;font-size:13px;margin-bottom:6px;"><strong>Definition:</strong> Global climate agreement adopted in <span class="kw">2015</span> to combat climate change and limit global temperature rise.</p>
+<p style="color:#94a3b8;font-size:13px;margin-bottom:6px;"><strong>Objectives:</strong> Limit global temperature rise to <span class="kw">well below 2°C</span> (aim for <span class="kw">1.5°C</span>); reduce GHG emissions; promote climate resilience.</p>
+<ul>
+<li><span class="kw">Nationally Determined Contributions (NDCs):</span> Each country sets own targets, updated every 5 years</li>
+<li><span class="kw">Global Cooperation:</span> All countries (developed + developing) participate</li>
+<li><span class="kw">Climate Finance:</span> Developed countries fund developing countries</li>
+<li><span class="kw">Transparency & Monitoring:</span> Regular progress reporting</li>
+<li><span class="kw">Long-Term Goal:</span> Achieve net-zero GHG emissions in second half of century</li>
+</ul>
+
+<h3>Importance</h3>
+<ul>
+<li>Promotes international cooperation; reduces GHG emissions</li>
+<li>Encourages renewable energy; supports adaptation and mitigation</li>
+<li><strong>India</strong> actively participates in both agreements</li>
+</ul>
+
+<div class="concl-box">Both the <span class="kw">Kyoto Protocol</span> and <span class="kw">Paris Agreement</span> provide essential international frameworks for climate governance, with Paris being more inclusive and ambitious in targeting net-zero emissions.</div>`,
+
+concise:`<div class="intro-box">Two key international agreements to fight <span class="kw">climate change</span>.</div>
+<table>
+<tr><th>Feature</th><th>Kyoto Protocol (1997)</th><th>Paris Agreement (2015)</th></tr>
+<tr><td>Type</td><td>Legally binding</td><td>Voluntary NDCs</td></tr>
+<tr><td>Scope</td><td>Developed countries only</td><td>All countries</td></tr>
+<tr><td>Target</td><td>5% below 1990 levels</td><td>Below 2°C / 1.5°C</td></tr>
+<tr><td>Key Tools</td><td>CDM, JI, Emissions Trading</td><td>NDCs, Climate Finance</td></tr>
+<tr><td>Long-term goal</td><td>Emission reduction</td><td>Net-zero by 2nd half century</td></tr>
+</table>
+<div class="concl-box"><span class="kw">Paris Agreement</span> is more inclusive and ambitious. Both are crucial for global climate governance. India participates in both.</div>`
+},
+
+// Q11 — NAPCC
+{
+full:`<div class="intro-box">India launched the <span class="kw">National Action Plan on Climate Change (NAPCC)</span> in <span class="kw">2008</span> to address climate change through sustainable development and environmental protection. It aims to reduce GHG emissions, increase renewable energy, and enhance climate change adaptation.</div>
+
+<h3>Objectives of NAPCC</h3>
+<ul>
+<li>Promote <span class="kw">sustainable development</span> while addressing climate change</li>
+<li>Reduce <span class="kw">greenhouse gas emissions</span></li>
+<li>Increase use of <span class="kw">renewable energy</span></li>
+<li>Improve <span class="kw">energy efficiency</span> in industries and buildings</li>
+<li>Protect natural ecosystems and biodiversity</li>
+<li>Enhance climate change <span class="kw">adaptation capacity</span></li>
+<li>Encourage research and technological innovation</li>
+</ul>
+
+<h3>Eight National Missions of NAPCC</h3>
+<ul>
+<li><span class="kw">1. National Solar Mission:</span> Promote solar energy — increase solar power generation, reduce fossil fuel dependence, promote solar panels and thermal systems</li>
+<li><span class="kw">2. National Mission for Enhanced Energy Efficiency:</span> Improve energy efficiency in industries, buildings, and appliances — energy-saving standards, market mechanisms</li>
+<li><span class="kw">3. National Mission on Sustainable Habitat:</span> Sustainable cities — energy-efficient buildings, better urban planning, improved waste management, public transport</li>
+<li><span class="kw">4. National Water Mission:</span> Sustainable water management — improve water-use efficiency, promote conservation, integrated water resource management</li>
+<li><span class="kw">5. National Mission for Sustaining the Himalayan Ecosystem:</span> Protect glaciers and mountain ecosystems, study climate impact on Himalayas, promote sustainable mountain development</li>
+<li><span class="kw">6. Green India Mission:</span> Increase forest and tree cover — afforestation, reforestation, restoration of degraded forests, enhance biodiversity and carbon sequestration</li>
+<li><span class="kw">7. National Mission for Sustainable Agriculture:</span> Climate-resilient farming — drought-resistant crops, efficient irrigation, soil management, weather-based crop insurance</li>
+<li><span class="kw">8. National Mission on Strategic Knowledge for Climate Change:</span> Climate research and data collection, development of climate models, training and capacity building</li>
+</ul>
+
+<div class="concl-box"><span class="kw">NAPCC</span> is India's comprehensive framework for addressing climate change. Its eight missions cover energy, water, forests, agriculture, and research — helping India reduce emissions, build climate resilience, and achieve <span class="kw">sustainable development</span>.</div>`,
+
+concise:`<div class="intro-box"><span class="kw">NAPCC</span> launched by India in <span class="kw">2008</span> to tackle climate change through sustainable development.</div>
+<h3>Key Objectives</h3>
+<ul><li>Reduce GHG emissions, promote renewable energy, improve efficiency, protect ecosystems, enhance adaptation</li></ul>
+<h3>Eight National Missions</h3>
+<ul>
+<li><span class="kw">1. Solar Mission</span>: Expand solar power</li>
+<li><span class="kw">2. Energy Efficiency</span>: Efficient industries, appliances, buildings</li>
+<li><span class="kw">3. Sustainable Habitat</span>: Green cities, urban planning, waste management</li>
+<li><span class="kw">4. Water Mission</span>: Water conservation and integrated management</li>
+<li><span class="kw">5. Himalayan Ecosystem</span>: Protect glaciers and mountain regions</li>
+<li><span class="kw">6. Green India Mission</span>: Afforestation, forest restoration, carbon sequestration</li>
+<li><span class="kw">7. Sustainable Agriculture</span>: Drought crops, smart irrigation, crop insurance</li>
+<li><span class="kw">8. Strategic Knowledge</span>: Climate research, models, capacity building</li>
+</ul>
+<div class="concl-box">NAPCC is India's holistic strategy covering all key sectors to combat <span class="kw">climate change</span>.</div>`
+},
+
+// Q12 — Carbon Tax, Trading, Cap-and-Trade
+{
+full:`<div class="intro-box">Governments use <span class="kw">economic and policy mechanisms</span> to reduce GHG emissions. <span class="kw">Carbon tax</span>, <span class="kw">carbon trading</span>, and <span class="kw">cap-and-trade</span> are important tools that encourage industries to reduce emissions while promoting cleaner technologies.</div>
+
+<h3>1. Carbon Tax</h3>
+<p style="color:#94a3b8;font-size:13px;margin-bottom:6px;"><strong>Definition:</strong> A tax imposed on fossil fuels based on the amount of <span class="kw">CO₂ emissions</span> they produce. Governments charge a fixed price per unit of CO₂ emitted.</p>
+<ul>
+<li><strong>Working:</strong> Fossil fuels burned → CO₂ produced → tax applied based on carbon content → higher emissions = higher taxes</li>
+<li><strong>Advantages:</strong> Encourages emission reduction; promotes renewable energy; provides government revenue for green programs; simple and transparent</li>
+<li><strong>Example:</strong> <span class="kw">Sweden</span> has successfully implemented carbon tax</li>
+</ul>
+
+<h3>2. Carbon Trading</h3>
+<p style="color:#94a3b8;font-size:13px;margin-bottom:6px;"><strong>Definition:</strong> Market-based system where companies buy and sell <span class="kw">carbon emission allowances</span>. Companies reducing emissions below limits sell excess permits to others.</p>
+<ul>
+<li><strong>Working:</strong> Govt sets emission limits → companies get permits → under-emitters sell permits → over-emitters buy permits</li>
+<li><strong>Benefits:</strong> Encourages cost-effective emission reduction; promotes clean technology investment</li>
+<li>Introduced under the <span class="kw">Kyoto Protocol</span> as a flexible mechanism</li>
+</ul>
+
+<h3>3. Cap-and-Trade Mechanism</h3>
+<p style="color:#94a3b8;font-size:13px;margin-bottom:6px;"><strong>Definition:</strong> Regulatory system where the government sets a maximum limit (<span class="kw">cap</span>) on total GHG emissions. Companies can <span class="kw">trade</span> emission permits.</p>
+<ul>
+<li><strong>Working Process:</strong></li>
+<li>Govt sets overall emission cap → permits distributed → companies hold permits ≥ emissions → surplus permits sold → deficit permits purchased</li>
+<li><strong>Advantages:</strong> Provides industry flexibility; encourages technological innovation; ensures total emissions stay within cap</li>
+</ul>
+
+<h3>Role in Climate Change Mitigation</h3>
+<ul>
+<li>Reduce GHG emissions; encourage energy efficiency</li>
+<li>Promote renewable energy use; support low-carbon technology investment</li>
+<li>Provide economic incentives for environmental protection</li>
+<li>Allow industries flexibility while meeting emission targets</li>
+</ul>
+
+<div class="concl-box"><span class="kw">Carbon tax</span>, <span class="kw">carbon trading</span>, and <span class="kw">cap-and-trade</span> are powerful economic tools that help governments control <span class="kw">greenhouse gas emissions</span> while giving industries the flexibility to adopt cleaner technologies for a sustainable future.</div>`,
+
+concise:`<div class="intro-box">Three <span class="kw">economic/policy mechanisms</span> to reduce GHG emissions.</div>
+<table>
+<tr><th>Mechanism</th><th>Definition</th><th>Key Feature</th></tr>
+<tr><td><span class="kw">Carbon Tax</span></td><td>Tax on fossil fuels per unit CO₂</td><td>Higher emissions = higher tax; Sweden example</td></tr>
+<tr><td><span class="kw">Carbon Trading</span></td><td>Buy/sell emission allowances</td><td>Under-emitters sell; over-emitters buy; Kyoto Protocol</td></tr>
+<tr><td><span class="kw">Cap-and-Trade</span></td><td>Govt sets emission cap; permits traded</td><td>Ensures total emissions within limit; flexible for industry</td></tr>
+</table>
+<h3>Role in Mitigation</h3>
+<ul><li>Reduce GHGs; promote renewables; support clean tech; economic incentives for green practices</li></ul>
+<div class="concl-box">All three mechanisms work together to make <span class="kw">emission reduction</span> economically viable for industries.</div>`
+}
 ];
 
-const conciseAnswers = [
-  "Climate change = long-term changes in temperature, rainfall, wind. Caused by GHGs from fossil fuels, deforestation (IPCC confirms). Earth's Energy Balance: Sun → shortwave radiation → Earth absorbs → emits infrared. GHGs trap heat → Global Warming. Greenhouse Effect: Without it Earth = −18°C, with it = 15°C. Major GHGs: CO₂ (fossil fuels), CH₄ (livestock), N₂O (fertilizers), F-gases (refrigeration). Examples: Rising temperatures, melting glaciers, sea-level rise, coral bleaching in Great Barrier Reef.",
-  "Natural GHE: Natural warming by natural GHGs. Earth = 15°C (without = −18°C). Supports all life and ecosystems. Enhanced GHE: Human-caused excess GHGs → abnormal temperature rise. Causes: fossil fuels, deforestation, industry, agriculture. Key Differences: Natural=balanced/stable; Enhanced=excessive concentration. Role in Global Warming: Enhanced GHE → more heat trapped → sea-level rise, glacial melt, coral bleaching (Great Barrier Reef).",
-  "4 Major Consequences: 1) Biodiversity Loss: Rising temps + habitat loss → species extinction, food chain disruption, Arctic animals threatened. 2) Coral Bleaching: Ocean warming → corals expel algae → turn white. Great Barrier Reef affected. 3) Desertification: Reduced rainfall + high temps → fertile land becomes desert → crop loss, water scarcity, migration. 4) Forest Fires: Drought + high temps → uncontrolled fires → CO₂ emissions, habitat destruction, further warming cycle.",
-  "4 Water Impacts: 1) Glacier Melting: Rising temps → Himalayan glaciers melting → sea-level rise, GLOFs, reduced long-term water supply. 2) Groundwater Depletion: Reduced rainfall + over-extraction → falling water tables, dry wells, water shortages. 3) Floods: Warmer atmosphere + glacial melt → heavy rainfall → infrastructure damage, contamination. 4) Droughts: Irregular monsoons + evaporation → crop failure, water scarcity, desertification, migration.",
-  "Climate change impacts agriculture via: Rising temps (heat stress, shorter seasons), irregular rainfall (flooding, shortages), extreme events (crop damage). 3 Key Problems: 1) Crop Failure: Heat stress + drought + floods → loss of income, reduced production. 2) Pest Spread: Warmer temps → faster pest reproduction, longer survival, fungal diseases → increased pesticide use. 3) Food Insecurity: Crop failure + rising prices → malnutrition, rural poverty, especially in developing countries.",
-  "Mitigation = reducing/preventing GHG emissions. 7 Strategies: 1) Renewable Energy (Solar, Wind, Hydro, Geothermal, Biomass). 2) Energy Efficiency (LED, smart grids, efficient appliances). 3) Sustainable Transport (EVs, public transport, biofuels). 4) Carbon Sequestration (afforestation, soil storage, CCS). 5) Sustainable Agriculture (organic farming, agroforestry). 6) Waste Management (recycling, methane capture from landfills). 7) Lifestyle Changes (less meat, conserve energy).",
-  "5 Renewable Sources: 1) Solar: PV cells → electricity; no GHGs; National Solar Mission (India). 2) Wind: Turbines → electricity; no fuel; coastal areas. 3) Hydropower: Dams → turbines; low GHGs; oldest renewable source. 4) Geothermal: Underground steam → turbines; stable supply; volcanic regions. 5) Biomass: Organic waste → biofuels; carbon-neutral if sustainable. All reduce fossil fuel dependence and GHG emissions.",
-  "Carbon Sequestration = capturing and storing CO₂. 3 Methods: 1) Afforestation/Reforestation: Trees absorb CO₂ via photosynthesis; act as carbon sinks; India promotes large-scale plantation. 2) Soil Carbon Storage: Crop rotation, reduced tillage, organic manure, agroforestry; improves fertility and sequesters carbon. 3) CCS (Carbon Capture & Storage): Industrial CO₂ captured → transported → stored underground in geological formations.",
-  "Adaptation = adjusting systems to minimize climate damage. 4 Strategies: 1) Infrastructure: Climate-resilient buildings, flood-resistant design, improved drainage. 2) Water Resources: Rainwater harvesting, reservoirs, drip irrigation, watershed restoration. 3) Agriculture: Drought-resistant varieties, crop diversification, climate-smart agriculture. 4) Coastal Areas: Sea walls, mangrove restoration, coastal zone management, community relocation.",
-  "Kyoto Protocol (1997, force 2005): Legally binding; developed countries reduce 5% below 1990; CDM, Emissions Trading, Joint Implementation. Paris Agreement (2015): All countries; limit warming to <2°C (aim 1.5°C); NDCs updated every 5 years; climate finance from developed to developing nations; net-zero by 2nd half of century. India actively participates in both.",
-  "NAPCC (2008): India's national climate framework. Objectives: reduce GHGs, promote renewables, energy efficiency, protect ecosystems. 8 Missions: 1) Solar Mission, 2) Enhanced Energy Efficiency, 3) Sustainable Habitat, 4) Water Mission, 5) Himalayan Ecosystem, 6) Green India Mission, 7) Sustainable Agriculture, 8) Strategic Knowledge for Climate Change.",
-  "3 Economic Instruments: 1) Carbon Tax: Fixed tax per unit CO₂ emitted; higher emissions = higher tax; encourages clean energy (Sweden example). 2) Carbon Trading: Companies buy/sell emission allowances; less polluters SELL unused credits; more polluters BUY. Introduced under Kyoto Protocol. 3) Cap-and-Trade: Government sets CAP; permits issued; companies trade; total emissions capped. All three reduce GHGs, encourage efficiency, support low-carbon technology investment."
-];
-
-const quotes = [
-  '"Study Smart, Score Full Marks — One Question at a Time 🔥"',
-  '"The examiner wants keywords, structure, and confidence. This website gives you all three! 💯"',
-  '"Every VTU topper uses a system. Now you have the system. 🚀"',
-  '"10 marks per question × 12 questions = 120/120. Let\'s go! 🏆"',
-  '"Climate Change is the question. YOUR KNOWLEDGE is the answer. ⚡"'
-];
-
-// State
-let currentQ = -1;
-let isHFMode = false;
+// ═══════════════════════════════
+//  APP STATE
+// ═══════════════════════════════
+let selectedQ = -1;
 let isConcise = false;
-let markedQuestions = new Set();
-let totalMarks = 0;
 
-// Build sidebar
-function buildSidebar() {
-  const list = document.getElementById('questionList');
-  questions.forEach((q, i) => {
-    const btn = document.createElement('button');
-    btn.className = 'q-btn';
-    btn.id = `qbtn-${i}`;
-    btn.innerHTML = `<span class="q-num">Q${String(i+1).padStart(2,'0')}</span><span>${q.length > 80 ? q.substring(0,78)+'…' : q}</span>`;
-    btn.onclick = () => selectQuestion(i);
-    list.appendChild(btn);
+// Build question list
+const ql = document.getElementById('questionList');
+questions.forEach((q, i) => {
+  const el = document.createElement('div');
+  el.className = 'q-item';
+  el.innerHTML = `<div class="q-num">Q${i+1}</div><div>${q}</div>`;
+  el.onclick = () => selectQ(i);
+  ql.appendChild(el);
+});
+
+function selectQ(i) {
+  selectedQ = i;
+  document.querySelectorAll('.q-item').forEach((el, idx) => {
+    el.classList.toggle('selected', idx === i);
   });
-}
-
-function selectQuestion(idx) {
-  currentQ = idx;
+  // Hide answer if visible
+  document.getElementById('answerCard').classList.remove('visible');
   isConcise = false;
-  document.querySelectorAll('.q-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById(`qbtn-${idx}`).classList.add('active');
-  document.getElementById('activeQuestionText').textContent = `Q${idx+1}. ${questions[idx]}`;
-  document.getElementById('answerContent').innerHTML = `<div class="empty-state"><div class="empty-icon">⚡</div><div class="empty-text">QUESTION LOADED!<br>HIT 🚀 GENERATE TO GET FULL MARKS ANSWER</div></div>`;
-  document.getElementById('answerCard').classList.remove('hf-mode');
-  document.getElementById('hfTag').classList.remove('show');
-  document.getElementById('cardTitle').textContent = `Q${idx+1} ANSWER PREVIEW`;
 }
 
-function showLoading(msg) {
-  const lo = document.getElementById('loadingOverlay');
-  document.getElementById('loadingText').textContent = msg;
-  lo.classList.add('show');
-}
-function hideLoading() {
-  document.getElementById('loadingOverlay').classList.remove('show');
-}
-
-function generateAnswer(hfMode) {
-  if (currentQ === -1) {
-    alert('⚡ Please select a question first!');
+function generateAnswer() {
+  if (selectedQ === -1) {
+    showToast('⚠️ Please select a question first!', true);
     return;
   }
-  isHFMode = hfMode;
-  isConcise = false;
-  const msgs = hfMode
-    ? ['🤖 Initializing Hugging Face inference...','⚡ Processing document embeddings...','🔥 Generating exam-ready answer...']
-    : ['🚀 Fetching from document index...','⚡ Structuring VTU answer format...','✅ Finalizing full marks answer...'];
-  showLoading(msgs[0]);
-  let step = 0;
-  const interval = setInterval(() => {
-    step++;
-    if (step < msgs.length) document.getElementById('loadingText').textContent = msgs[step];
-    else {
-      clearInterval(interval);
-      setTimeout(() => {
-        hideLoading();
-        renderAnswer(currentQ, hfMode, false);
-      }, 400);
-    }
-  }, 600);
+  const btn = document.getElementById('genBtn');
+  const spinner = document.getElementById('btnSpinner');
+  const icon = document.getElementById('btnIcon');
+  const txt = document.getElementById('btnText');
+  btn.disabled = true;
+  spinner.style.display = 'block';
+  icon.style.display = 'none';
+  txt.textContent = 'Generating...';
+
+  setTimeout(() => {
+    btn.disabled = false;
+    spinner.style.display = 'none';
+    icon.style.display = '';
+    txt.textContent = 'GENERATE FULL MARKS ANSWER';
+
+    document.getElementById('answerQTitle').textContent = questions[selectedQ];
+    isConcise = false;
+    document.getElementById('conciseLabel').style.display = 'none';
+    document.getElementById('answerBody').innerHTML = answers[selectedQ].full;
+    const card = document.getElementById('answerCard');
+    card.classList.add('visible');
+    card.scrollIntoView({behavior:'smooth', block:'start'});
+    launchConfetti();
+  }, 900);
 }
 
-function renderAnswer(idx, hfMode, concise) {
-  const card = document.getElementById('answerCard');
-  const content = document.getElementById('answerContent');
-  const hfTag = document.getElementById('hfTag');
-  const hfIndicator = document.getElementById('hfIndicator');
-  const cardTitle = document.getElementById('cardTitle');
-
-  if (hfMode) {
-    card.classList.add('hf-mode');
-    hfTag.classList.add('show');
-    hfIndicator.classList.add('active');
-  } else {
-    card.classList.remove('hf-mode');
-    hfTag.classList.remove('show');
-    hfIndicator.classList.remove('active');
-  }
-
-  cardTitle.textContent = concise ? `Q${idx+1} ULTRA CONCISE MODE` : `Q${idx+1} FULL MARKS ANSWER`;
-
-  if (concise) {
-    content.innerHTML = `<div class="answer-title" style="font-size:13px;">⚡ ULTRA CONCISE — Q${idx+1}</div>
-    <div style="font-family:'Share Tech Mono',monospace;font-size:13px;line-height:1.8;color:#1a2030;padding:10px 0;white-space:pre-wrap;">${conciseAnswers[idx]}</div>
-    <div class="answer-conclusion"><strong>Quick Revision Version — All keywords preserved for VTU exam!</strong></div>`;
-  } else {
-    content.innerHTML = answers[idx];
-  }
-
-  // Scroll to answer
-  card.scrollIntoView({behavior:'smooth', block:'start'});
-}
-
-function refineAnswer() {
-  if (currentQ === -1) { alert('⚡ Select a question first!'); return; }
+function toggleConcise() {
+  if (selectedQ === -1) return;
   isConcise = !isConcise;
-  showLoading('⚡ Refining to Ultra Concise Mode...');
-  setTimeout(() => { hideLoading(); renderAnswer(currentQ, isHFMode, isConcise); }, 900);
+  const label = document.getElementById('conciseLabel');
+  const body = document.getElementById('answerBody');
+  if (isConcise) {
+    body.innerHTML = answers[selectedQ].concise;
+    label.style.display = 'inline-flex';
+    showToast('⚡ Quick Revision Mode activated!');
+  } else {
+    body.innerHTML = answers[selectedQ].full;
+    label.style.display = 'none';
+    showToast('📖 Full answer restored!');
+  }
 }
 
 function copyAnswer() {
-  const content = document.getElementById('answerContent');
-  const text = content.innerText;
+  const body = document.getElementById('answerBody');
+  const text = body.innerText;
   navigator.clipboard.writeText(text).then(() => {
-    const btn = document.querySelector('.mini-btn');
-    btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-    btn.style.color = '#00ff88';
-    setTimeout(() => { btn.innerHTML = '<i class="fas fa-copy"></i> Copy'; btn.style.color = ''; }, 2000);
+    showToast('✅ Answer copied to clipboard!');
+  }).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    showToast('✅ Answer copied!');
   });
 }
 
 function markTen() {
-  if (currentQ === -1) return;
-  if (!markedQuestions.has(currentQ)) {
-    markedQuestions.add(currentQ);
-    totalMarks += 10;
-    document.getElementById('scoreNum').textContent = totalMarks;
-    const filled = Math.min(5, Math.floor(totalMarks / 24));
-    const stars = '★'.repeat(filled) + '☆'.repeat(5-filled);
-    document.getElementById('starsDisplay').textContent = stars;
-    document.getElementById(`qbtn-${currentQ}`).style.borderColor = '#ffd700';
-    launchConfetti();
-  }
+  const btn = document.getElementById('mark10Btn');
+  btn.innerHTML = '<i class="fa fa-star"></i> Marked 10/10 ★';
+  btn.style.background = 'rgba(251,191,36,0.15)';
+  showToast('🏆 Marked as 10/10! You got this!');
+  setTimeout(() => {
+    btn.innerHTML = '<i class="fa fa-check-double"></i> Mark 10/10';
+    btn.style.background = '';
+  }, 3000);
 }
 
+function showToast(msg, warn) {
+  const t = document.getElementById('toast');
+  const m = document.getElementById('toast-msg');
+  m.textContent = msg;
+  t.style.borderColor = warn ? 'rgba(251,191,36,0.4)' : 'rgba(0,245,212,0.3)';
+  t.style.color = warn ? '#fbbf24' : '#00f5d4';
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+function simulateUpload(inp) {
+  const bar = document.getElementById('progBar');
+  const fill = document.getElementById('progFill');
+  const succ = document.getElementById('uploadSuccess');
+  bar.style.display = 'block';
+  succ.style.display = 'none';
+  let w = 0;
+  const iv = setInterval(() => {
+    w += Math.random() * 18;
+    if (w >= 100) { w = 100; clearInterval(iv); succ.style.display = 'flex'; showToast('📄 Notes loaded successfully!'); }
+    fill.style.width = w + '%';
+  }, 120);
+}
+
+// ═══════════════════════════
+//  Confetti
+// ═══════════════════════════
 function launchConfetti() {
-  const colors = ['#00ff88','#00e5ff','#ff00ff','#bf00ff','#ffd700','#ff6600'];
-  for (let i = 0; i < 80; i++) {
-    const el = document.createElement('div');
-    el.className = 'confetti-piece';
-    el.style.cssText = `
-      left:${Math.random()*100}vw;
-      top:-20px;
-      background:${colors[Math.floor(Math.random()*colors.length)]};
-      width:${6+Math.random()*10}px;
-      height:${6+Math.random()*10}px;
-      border-radius:${Math.random()>0.5?'50%':'2px'};
-      animation-duration:${2+Math.random()*2}s;
-      animation-delay:${Math.random()*0.5}s;
-    `;
-    document.body.appendChild(el);
-    setTimeout(() => el.remove(), 4000);
+  const canvas = document.getElementById('confetti-canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const colors = ['#00f5d4','#10b981','#a855f7','#f472b6','#fbbf24','#60a5fa'];
+  const particles = Array.from({length:120}, () => ({
+    x: Math.random() * canvas.width,
+    y: -10,
+    r: Math.random() * 6 + 3,
+    d: Math.random() * 80 + 20,
+    color: colors[Math.floor(Math.random()*colors.length)],
+    tilt: Math.floor(Math.random()*10)-10,
+    tiltAngle: 0,
+    tiltAngleIncrement: (Math.random()*0.07)+0.05,
+    vx: (Math.random()-0.5)*3,
+    vy: Math.random()*3+2,
+  }));
+
+  let frame = 0;
+  let animId;
+  function draw() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(p => {
+      p.tiltAngle += p.tiltAngleIncrement;
+      p.x += p.vx;
+      p.y += p.vy;
+      p.tilt = Math.sin(p.tiltAngle)*15;
+      if (p.y > canvas.height) { p.y = -10; p.x = Math.random()*canvas.width; }
+      ctx.beginPath();
+      ctx.lineWidth = p.r;
+      ctx.strokeStyle = p.color;
+      ctx.moveTo(p.x+p.tilt+p.r/3, p.y);
+      ctx.lineTo(p.x+p.tilt, p.y+p.tilt+p.r/3);
+      ctx.stroke();
+    });
+    frame++;
+    if (frame < 140) animId = requestAnimationFrame(draw);
+    else ctx.clearRect(0,0,canvas.width,canvas.height);
   }
+  if (animId) cancelAnimationFrame(animId);
+  draw();
 }
-
-// Particles
-function createParticles() {
-  const container = document.getElementById('particles');
-  const colors = ['rgba(0,255,136,0.6)','rgba(0,229,255,0.6)','rgba(191,0,255,0.5)','rgba(255,0,102,0.4)'];
-  for (let i = 0; i < 30; i++) {
-    const p = document.createElement('div');
-    p.className = 'particle';
-    const size = 2 + Math.random() * 4;
-    p.style.cssText = `
-      width:${size}px;height:${size}px;
-      left:${Math.random()*100}%;
-      background:${colors[Math.floor(Math.random()*colors.length)]};
-      animation-duration:${8+Math.random()*15}s;
-      animation-delay:${Math.random()*10}s;
-      box-shadow:0 0 ${size*2}px ${colors[Math.floor(Math.random()*colors.length)]};
-    `;
-    container.appendChild(p);
-  }
-}
-
-// Rotating quotes
-let quoteIdx = 0;
-function rotateQuotes() {
-  quoteIdx = (quoteIdx + 1) % quotes.length;
-  const el = document.getElementById('footerQuote');
-  el.style.opacity = '0';
-  setTimeout(() => { el.textContent = quotes[quoteIdx]; el.style.opacity = ''; }, 500);
-}
-
-// Init
-buildSidebar();
-createParticles();
-setInterval(rotateQuotes, 6000);
 </script>
 </body>
 </html>
